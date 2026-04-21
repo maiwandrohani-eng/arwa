@@ -1,44 +1,74 @@
 {
   "articles": [
     {
-      "id": "a1",
-      "title": "Journalist Arwa Damon on Conflict, Humanity and the Stories That Stay With You",
-      "publication": "MENASource / Substack",
-      "date": "2024-03-15",
-      "url": "https://menasource.substack.com/p/journalist-arwa-damon-on-conflict",
-      "excerpt": "Arwa Damon reflects on two decades of war reporting, the psychological cost of bearing witness, and why she ultimately chose humanitarian work over the camera."
+      "title": "The arduous system for getting aid into Gaza",
+      "publication": "NPR",
+      "date": "2025-08-12",
+      "url": "https://www.npr.org/2025/08/12/nx-s1-5498719/the-arduous-system-for-getting-aid-into-gaza",
+      "excerpt": "Arwa Damon’s charity — International Network for Aid, Relief and Assistance — has tried to send aid to Gaza, facing rejections and obstacles. The episode discusses the economics of running a humanitarian nonprofit and barriers to aid delivery."
     },
     {
-      "id": "a2",
-      "title": "On the Ground in Gaza — With Arwa Damon",
-      "publication": "New Lines Magazine",
-      "date": "2024-04-19",
-      "url": "https://newlinesmag.com/podcast/on-the-ground-in-gaza-with-arwa-damon/",
-      "excerpt": "Damon discusses her four entries into the Gaza Strip to lead INARA's humanitarian response, and the scenes she encountered that even decades of war reporting could not prepare her for."
+      "title": "How generational trauma among Israelis and Palestinians fuels the cycles of violence",
+      "publication": "NPR",
+      "date": "2023-10-14",
+      "url": "https://www.npr.org/2023/10/14/1205987068/how-generational-trauma-among-israelis-and-palestinians-fuels-the-cycles-of-viol",
+      "excerpt": "NPR's Scott Detrow speaks with Arwa Damon, former international foreign correspondent for CNN, about the impact of trauma on Israelis and Palestinians as a result of successive eruptions of violence."
     },
     {
-      "id": "a3",
-      "title": "With Israel's Expanding War, My Colleagues in Gaza Fear a 'Death Blow'",
-      "publication": "The New Humanitarian",
-      "date": "2025-05-08",
-      "url": "https://www.thenewhumanitarian.org/opinion/2025/05/08/israel-war-plan-take-over-aid-palestine-gaza-fear",
-      "excerpt": "A first-person account of the deteriorating humanitarian conditions in Gaza and the threat posed by plans to restructure aid delivery."
+      "title": "A 'Devastating Scale' Of Suffering In Syria",
+      "publication": "NPR",
+      "date": "2020-02-23",
+      "url": "https://www.npr.org/2020/02/23/808574910/a-devastating-scale-of-suffering-in-syria",
+      "excerpt": "NPR's Lulu Garcia-Navarro speaks to CNN's Arwa Damon about the unfolding humanitarian crisis in Idlib as Turkish and Russian-backed Syrian government forces fight for control of the territory."
     },
     {
-      "id": "a4",
-      "title": "Arctic Melt: Threat Beneath the Ice",
-      "publication": "CNN",
-      "date": "2019-06-08",
-      "url": "https://edition.cnn.com/2019/06/08/world/arctic-beneath-ice-intl/index.html",
-      "excerpt": "Reporting from a Greenpeace expedition to the Arctic, Damon documents the alarming pace of polar ice loss and its consequences for global ecosystems."
+      "title": "For Days, Turkey Has Been Targeting Kurds In Northern Syria",
+      "publication": "NPR",
+      "date": "2019-10-13",
+      "url": "https://www.npr.org/2019/10/13/769848584/for-days-turkey-has-been-targeting-kurds-in-northern-syria",
+      "excerpt": "As Turkey continues its attack against Kurdish towns in northern Syria, NPR's Lulu Garcia-Navarro speaks to CNN correspondent Arwa Damon, who is reporting near Turkey's border with Syria."
     },
     {
-      "id": "a5",
-      "title": "Palestinians Feel They Are Being 'Slowly Exterminated'",
-      "publication": "Democracy Now!",
-      "date": "2024-11-14",
-      "url": "https://www.democracynow.org/2024/11/14/arwa_damon_gaza_healthcare",
-      "excerpt": "Damon speaks directly about the healthcare crisis inside Gaza and the moral weight of witnessing systematic destruction of civilian infrastructure."
+      "title": "CNN Defends Reporting On Slain Ambassador's Diary",
+      "publication": "NPR",
+      "date": "2012-09-25",
+      "url": "https://www.npr.org/2012/09/25/161759775/cnn-defends-reporting-on-slain-ambassadors-diary",
+      "excerpt": "CNN reporter Arwa Damon found Ambassador Stevens' personal journal in Benghazi, revealing his fears about security threats. The report sparked debate about journalistic ethics."
+    },
+    {
+      "title": "A Passion To Bear Witness: Why War Correspondents Take The Risk",
+      "publication": "NPR",
+      "date": "2012-02-17",
+      "url": "https://www.npr.org/sections/thetwo-way/2012/02/17/147052449/a-passion-to-bear-witness-why-war-correspondents-take-the-risk",
+      "excerpt": "CNN's Arwa Damon made it into Homs, Syria, under siege, to report on the conflict. The article explores the motivations and risks for war correspondents."
+    },
+    {
+      "title": "Trial Looms For Sole Defendant In 2012 Benghazi Attack That Killed Ambassador",
+      "publication": "NPR",
+      "date": "2017-08-23",
+      "url": "https://www.npr.org/2017/08/23/545083329/trial-looms-for-sole-defendant-in-2012-benghazi-attacks-that-killed-ambassador",
+      "excerpt": "Coverage of the Benghazi attack, with reporting from Arwa Damon on the ground, as the trial for the accused begins in Washington, D.C."
+    },
+    {
+      "title": "INARA’s Mobile Clinic in Syria",
+      "publication": "INARA",
+      "date": "2025-08-09",
+      "url": "https://inara.org/inaras-mobile-clinic-in-syria/",
+      "excerpt": "INARA’s mobile clinic, led by Arwa Damon’s organization, reaches vulnerable communities in Syria, providing medical care in remote areas."
+    },
+    {
+      "title": "A Humanitarian crisis on the Afghan-Iranian borders",
+      "publication": "INARA",
+      "date": "2025-07-17",
+      "url": "https://inara.org/a-humanitarian-crisis-on-the-afghan-iranian-borders/",
+      "excerpt": "INARA, founded by Arwa Damon, assesses urgent needs at the Afghan-Iranian border amid a rapidly escalating humanitarian crisis."
+    },
+    {
+      "title": "Food parcels for displaced Gazan families in Egypt",
+      "publication": "INARA",
+      "date": "2025-07-11",
+      "url": "https://inara.org/food-parcels-for-displaced-gaza-families-in-egypt/",
+      "excerpt": "INARA distributes food parcels to Gazan families displaced to Egypt, addressing food insecurity and financial hardship."
     }
   ],
   "videos": [
@@ -66,87 +96,70 @@
   ],
   "interviews": [
     {
-      "id": "i1",
-      "title": "As a CNN War Reporter, Arwa Damon Thought She Had Seen Everything. Then She Went to Gaza.",
-      "outlet": "Haaretz Magazine",
-      "date": "2024-06-21",
-      "url": "https://www.haaretz.com/israel-news/2024-06-21/ty-article-magazine/.highlight/as-a-cnn-war-reporter-arwa-damon-thought-she-had-seen-everything-then-she-went-to-gaza/00000190-3bdd-d768-adf8-3fff8a400000",
-      "description": "In a rare long-form interview, Damon opens up about leaving CNN, founding INARA, and how Gaza tested every limit of what she thought she knew about human suffering.",
-      "type": "Magazine"
-    },
-    {
-      "id": "i2",
-      "title": "Media People: CNN's Arwa Damon on War Reporting, Tattoos and Close Calls",
-      "outlet": "Women's Wear Daily",
-      "date": "2017-11-10",
-      "url": "https://wwd.com/business-news/media/media-people-cnns-arwa-damon-on-war-reporting-tattoos-and-close-calls-11042190/",
-      "description": "An intimate profile exploring Damon's personal philosophy, the physical and emotional toll of conflict journalism, and the stories she will never forget.",
-      "type": "Profile"
-    },
-    {
-      "id": "i3",
-      "title": "A Humanitarian Aid Crisis in Gaza — The Excerpt Podcast",
-      "outlet": "iHeart / The Excerpt",
-      "date": "2025-04-10",
-      "url": "https://www.iheart.com/podcast/272-the-excerpt-28847577/episode/a-humanitarian-aid-crisis-in-gaza-275922485/",
-      "description": "Damon joins the podcast to break down the layers of the Gaza humanitarian crisis and what INARA's on-the-ground teams are witnessing.",
+      "title": "The arduous system for getting aid into Gaza",
+      "outlet": "NPR - The Indicator from Planet Money",
+      "date": "2025-08-12",
+      "url": "https://www.npr.org/2025/08/12/nx-s1-5498719/the-arduous-system-for-getting-aid-into-gaza",
+      "description": "Arwa Damon discusses the challenges of delivering humanitarian aid to Gaza and the obstacles faced by her nonprofit, INARA.",
       "type": "Podcast"
     },
     {
-      "id": "i4",
-      "title": "Getting There: CNN's Arwa Damon",
-      "outlet": "Politico",
-      "date": "2014-03-10",
-      "url": "https://www.politico.com/story/2014/03/getting-there-cnn-correspondent-arwa-damon-104445.html",
-      "description": "How a young woman who sold bathrobes online became one of the most recognisable faces of frontline war reporting. Damon traces her unlikely path to journalism.",
-      "type": "Profile"
+      "title": "How generational trauma among Israelis and Palestinians fuels the cycles of violence",
+      "outlet": "NPR",
+      "date": "2023-10-14",
+      "url": "https://www.npr.org/2023/10/14/1205987068/how-generational-trauma-among-israelis-and-palestinians-fuels-the-cycles-of-viol",
+      "description": "Arwa Damon, former CNN correspondent, discusses the psychological impact of conflict in the Middle East.",
+      "type": "Radio Interview"
+    },
+    {
+      "title": "A 'Devastating Scale' Of Suffering In Syria",
+      "outlet": "NPR",
+      "date": "2020-02-23",
+      "url": "https://www.npr.org/2020/02/23/808574910/a-devastating-scale-of-suffering-in-syria",
+      "description": "Arwa Damon reports on the humanitarian crisis in Idlib, Syria.",
+      "type": "Radio Interview"
+    },
+    {
+      "title": "For Days, Turkey Has Been Targeting Kurds In Northern Syria",
+      "outlet": "NPR",
+      "date": "2019-10-13",
+      "url": "https://www.npr.org/2019/10/13/769848584/for-days-turkey-has-been-targeting-kurds-in-northern-syria",
+      "description": "Arwa Damon provides on-the-ground reporting from the Turkey-Syria border.",
+      "type": "Radio Interview"
+    },
+    {
+      "title": "A Passion To Bear Witness: Why War Correspondents Take The Risk",
+      "outlet": "NPR",
+      "date": "2012-02-17",
+      "url": "https://www.npr.org/sections/thetwo-way/2012/02/17/147052449/a-passion-to-bear-witness-why-war-correspondents-take-the-risk",
+      "description": "Arwa Damon shares her experiences as a war correspondent in Syria.",
+      "type": "Radio Interview"
     }
   ],
   "events": [
     {
-      "id": "e0",
-      "title": "Seize the Summit",
-      "type": "Screening & Conversation",
-      "date": "2026-05-26",
-      "location": "The Conduit, 6 Langley St, London WC2H 9JA",
-      "description": "Join us for an exclusive screening of Seize the Summit followed by a conversation with Malala Yousafzai and Arwa Damon. Light refreshments will be served.",
-      "url": "mailto:farieha@malalafund.org"
+      "title": "INARA’s Mobile Clinic Launch",
+      "type": "Humanitarian Event",
+      "date": "2025-08-09",
+      "location": "Syria (various remote locations)",
+      "description": "Launch of INARA’s mobile clinic to provide medical care to vulnerable communities in Syria.",
+      "url": "https://inara.org/inaras-mobile-clinic-in-syria/"
     },
     {
-      "id": "e1",
-      "title": "INARA Annual Fundraising Gala",
-      "type": "Fundraiser",
-      "date": "2024-11-20",
-      "location": "New York, USA",
-      "description": "Arwa Damon hosts INARA's annual fundraiser, sharing stories from the field and presenting the organization's impact report for 2024.",
-      "url": "https://inara.org/get-involved/"
+      "title": "INARA Field Assessment at Afghan-Iranian Border",
+      "type": "Humanitarian Event",
+      "date": "2025-07-17",
+      "location": "Afghan-Iranian border",
+      "description": "INARA conducts a field visit to assess urgent humanitarian needs at the Afghan-Iranian border.",
+      "url": "https://inara.org/a-humanitarian-crisis-on-the-afghan-iranian-borders/"
     },
     {
-      "id": "e2",
-      "title": "Panel: Journalism, Humanitarian Action & the Ethics of Witnessing",
-      "type": "Conference",
-      "date": "2024-09-12",
-      "location": "Geneva, Switzerland",
-      "description": "Damon joins a panel of senior journalists and humanitarian leaders to discuss the responsibilities that come with documenting conflict, and where journalism ends and action must begin.",
-      "url": ""
-    },
-    {
-      "id": "e3",
-      "title": "Courage in Journalism Award Ceremony — IWMF",
-      "type": "Award Ceremony",
-      "date": "2014-10-22",
-      "location": "New York, USA",
-      "description": "Arwa Damon receives the 2014 Courage in Journalism Award from the International Women's Media Foundation, recognising her fearless reporting from Iraq, Syria, and Libya.",
-      "url": "https://www.iwmf.org"
-    },
-    {
-      "id": "e4",
-      "title": "Keynote: Bearing Witness — The Journalist as Humanitarian",
-      "type": "Keynote",
-      "date": "2023-05-03",
-      "location": "Beirut, Lebanon",
-      "description": "Speaking at a media and civil society forum in Beirut, Damon discusses the evolution of her career and the founding of INARA as a natural extension of bearing witness.",
-      "url": ""
+      "title": "Food Parcel Distribution for Displaced Gazans",
+      "type": "Humanitarian Event",
+      "date": "2025-07-11",
+      "location": "Egypt (for Gazan families)",
+      "description": "INARA distributes food parcels to Gazan families displaced to Egypt.",
+      "url": "https://inara.org/food-parcels-for-displaced-gaza-families-in-egypt/"
     }
   ]
 }
