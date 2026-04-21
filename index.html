@@ -464,11 +464,89 @@
       background: var(--dark-2);
       border-top: 1px solid rgba(201,168,76,0.1);
     }
-    .awards-grid {
+    .awards-slider-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+      position: relative;
+    }
+    .awards-slider-nav {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      color: var(--gold);
+      font-size: 1.6rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .awards-slider-nav:hover { background: rgba(201,168,76,0.22); }
+    .awards-slider {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+    .awards-slide {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      margin-top: 1rem;
+      width: 100%;
+      transition: opacity 0.5s;
+    }
+    .award-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 2px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .award-year {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .award-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .award-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .awards-slider-indicators {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1.2rem;
+    }
+    .awards-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.18);
+      cursor: pointer;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .awards-indicator.active {
+      background: var(--gold);
     }
     .award-card {
       background: var(--dark-3);
@@ -1505,39 +1583,88 @@
       <p class="section-label">Recognition</p>
       <h2>Awards &amp; Honors</h2>
       <div class="divider"></div>
-      <div class="awards-grid">
-
-        <div class="award-card">
-          <div class="pillar-icon" style="margin-bottom:0.5rem">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><rect x="3" y="4" width="18" height="5" rx="2"/><path d="M7 9v2a5 5 0 0 0 10 0V9"/><path d="M12 17v3"/><path d="M8 21h8"/><path d="M5 4v2a4 4 0 0 0 4 4"/><path d="M19 4v2a4 4 0 0 1-4 4"/></svg>
-          </div>
-          <div class="award-year">2012</div>
-          <div class="award-name">News &amp; Documentary Emmy Award</div>
-          <p class="award-desc">Outstanding Live Coverage of a Current News Story — Long Form, awarded for CNN's coverage of the Egyptian Revolution: <em>President Mubarak Steps Down</em>.</p>
-        </div>
-
-        <div class="award-card">
-          <div class="pillar-icon" style="margin-bottom:0.5rem">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><circle cx="12" cy="8" r="4"/><path d="M8.5 14 7 21l5-3 5 3-1.5-7"/></svg>
-          </div>
-          <div class="award-year">2012</div>
-          <div class="award-name">IRE Award</div>
-          <p class="award-desc">Investigative Reporters and Editors award for her investigation of the Consulate attack in Benghazi, alongside photojournalist Sarmad Qaseera.</p>
-        </div>
-
-        <div class="award-card">
-          <div class="pillar-icon" style="margin-bottom:0.5rem">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="42" height="42"><polygon points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27"/></svg>
-          </div>
-          <div class="award-year">2014</div>
-          <div class="award-name">Courage in Journalism Award</div>
-          <p class="award-desc">Presented by the International Women's Media Foundation (IWMF) for extraordinary bravery and commitment to journalism in the field.</p>
-        </div>
-
+      <div class="awards-slider-wrapper">
+        <button class="awards-slider-nav" id="awards-prev" aria-label="Previous awards">&#x25C0;</button>
+        <div class="awards-slider" id="awards-slider"></div>
+        <button class="awards-slider-nav" id="awards-next" aria-label="Next awards">&#x25B6;</button>
       </div>
+      <div class="awards-slider-indicators" id="awards-indicators"></div>
     </div>
   </section>
 
+  <script>
+    // --- AWARDS SLIDER ---
+    let awardsData = [];
+    let awardsCurrentSlide = 0;
+    let awardsSlideCount = 0;
+    let awardsAutoAdvanceTimer = null;
+
+    function renderAwardsSlider() {
+      const slider = document.getElementById('awards-slider');
+      const indicators = document.getElementById('awards-indicators');
+      if (!slider || !awardsData.length) return;
+      awardsSlideCount = Math.ceil(awardsData.length / 3);
+      slider.innerHTML = '';
+      for (let i = 0; i < awardsSlideCount; i++) {
+        const group = awardsData.slice(i * 3, i * 3 + 3);
+        const slide = document.createElement('div');
+        slide.className = 'awards-slide';
+        slide.style.display = i === awardsCurrentSlide ? 'grid' : 'none';
+        slide.innerHTML = group.map(a => `
+          <div class="award-card">
+            <div class="award-year">${a.year}</div>
+            <div class="award-name">${a.name}</div>
+            <div class="award-desc">${a.desc}</div>
+          </div>
+        `).join('');
+        slider.appendChild(slide);
+      }
+      // Indicators
+      if (indicators) {
+        indicators.innerHTML = '';
+        for (let i = 0; i < awardsSlideCount; i++) {
+          const dot = document.createElement('span');
+          dot.className = 'awards-indicator' + (i === awardsCurrentSlide ? ' active' : '');
+          dot.onclick = () => { awardsGoToSlide(i); };
+          indicators.appendChild(dot);
+        }
+      }
+    }
+
+    function awardsGoToSlide(idx) {
+      awardsCurrentSlide = idx;
+      renderAwardsSlider();
+      awardsResetAutoAdvance();
+    }
+
+    function awardsNextSlide() {
+      awardsCurrentSlide = (awardsCurrentSlide + 1) % awardsSlideCount;
+      renderAwardsSlider();
+    }
+    function awardsPrevSlide() {
+      awardsCurrentSlide = (awardsCurrentSlide - 1 + awardsSlideCount) % awardsSlideCount;
+      renderAwardsSlider();
+    }
+    function awardsResetAutoAdvance() {
+      if (awardsAutoAdvanceTimer) clearInterval(awardsAutoAdvanceTimer);
+      awardsAutoAdvanceTimer = setInterval(awardsNextSlide, 6000);
+    }
+
+    async function loadAwardsData() {
+      try {
+        const res = await fetch('awards.json');
+        awardsData = await res.json();
+        renderAwardsSlider();
+        awardsResetAutoAdvance();
+      } catch (e) { /* ignore */ }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadAwardsData();
+      document.getElementById('awards-next').onclick = awardsNextSlide;
+      document.getElementById('awards-prev').onclick = awardsPrevSlide;
+    });
+  </script>
   <!-- INARA -->
   <section class="inara-section" id="inara">
     <div class="container">
