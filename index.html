@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arwa Damon — Journalist & Humanitarian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --dark: #0d0d0d;
+      --dark-2: #141414;
+      --dark-3: #1e1e1e;
+      --dark-4: #2a2a2a;
+      --text: #e8e4dc;
+      --text-muted: #9e9890;
+      --accent: #b5452a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      backdrop-filter: blur(16px);
+      background: rgba(13,13,13,0.85);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 30% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 80% 20%, rgba(181,69,42,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 9rem 4rem 5rem 6rem;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--gold);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.1;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-title-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 1.8vw, 1.4rem);
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #c8c4bc;
+      max-width: 480px;
+      margin-bottom: 3rem;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+    .stat {
+      border-left: 2px solid var(--gold);
+      padding-left: 1rem;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.2rem;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--dark) 0%, transparent 30%),
+                  linear-gradient(to top, var(--dark) 0%, transparent 25%);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(25%) contrast(1.05);
+    }
+    .hero-quote {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      z-index: 5;
+      max-width: 280px;
+      text-align: right;
+    }
+    .hero-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(232,228,220,0.85);
+    }
+    .hero-quote cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* ─── SECTION BASE ─── */
+    section {
+      padding: 7rem 0;
+    }
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .divider {
+      width: 3rem;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── BIO STRIP ─── */
+    .bio-strip {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .bio-facts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .fact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .fact-item:last-child { border-bottom: none; }
+    .fact-key {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .fact-value {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .bio-body p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #c0bcb4;
+      margin-bottom: 1.4rem;
+    }
+    .bio-body p:last-child { margin-bottom: 0; }
+
+    /* ─── TIMELINE ─── */
+    .timeline-section { background: var(--dark); }
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,168,76,0.1));
+    }
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+      padding-bottom: 3rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -2.3rem;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+    }
+    .timeline-year {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+    .timeline-desc {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #9e9890;
+    }
+
+    /* ─── AWARDS ─── */
+    .awards-section {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .award-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 2px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .award-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+    .award-card:hover::before { transform: scaleX(1); }
+    .award-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .award-year {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .award-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    .award-desc {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    /* ─── INARA ─── */
+    .inara-section {
+      background: var(--dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .inara-section::before {
+      content: 'INARA';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 18rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.03);
+      pointer-events: none;
+      line-height: 1;
+    }
+    .inara-heading {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+    .inara-heading h2 { margin-bottom: 0.5rem; }
+    .inara-heading .divider { margin-bottom: 0; }
+    .inara-logo {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .inara-vmv {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(201,168,76,0.12);
+    }
+    .vmv-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .vmv-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .vmv-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #c0bcb4;
+    }
+    .inara-intro {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-bottom: 5rem;
+    }
+    .inara-body p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #c0bcb4;
+      margin-bottom: 1.4rem;
+    }
+    .inara-mission {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      line-height: 1.6;
+      color: var(--gold-light);
+      border-left: 3px solid var(--gold);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .inara-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .pillar {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.4rem;
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      transition: border-color 0.3s;
+    }
+    .pillar:hover { border-color: rgba(201,168,76,0.3); }
+    .pillar-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      color: var(--gold);
+      margin-top: 0.1rem;
+    }
+    .pillar-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+    .pillar-text h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+    .pillar-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .inara-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.1);
+      margin-bottom: 4rem;
+    }
+    .inara-stat {
+      background: var(--dark-2);
+      padding: 2rem;
+      text-align: center;
+    }
+    .inara-stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .inara-stat-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .inara-countries h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .inara-countries > p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .country-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      padding: 1.4rem 1.6rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .country-card:hover {
+      border-color: rgba(201,168,76,0.35);
+      background: var(--dark-4);
+    }
+    .country-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .country-programs {
+      font-size: 0.78rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+    .inara-cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+    /* ─── PULL QUOTE ─── */
+    .pull-quote {
+      background: var(--dark-4);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .pull-quote blockquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+      line-height: 1.6;
+      color: var(--gold-light);
+      max-width: 820px;
+      margin: 0 auto 1.5rem;
+    }
+    .pull-quote cite {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      line-height: 0;
+      color: var(--gold);
+      opacity: 0.4;
+      vertical-align: -0.5em;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark-2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── SOCIAL LINKS ─── */
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 2px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: border-color 0.25s, color 0.25s, background 0.25s;
+    }
+    .social-link:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,168,76,0.06);
+    }
+    .social-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .footer-social {
+      display: flex;
+      gap: 0.8rem;
+    }
+    .footer-social a {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-social svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-text { padding: 8rem 1.8rem 3rem; }
+      .hero-image { height: 55vh; }
+      .hero-quote { right: 1.5rem; bottom: 1.5rem; max-width: 220px; }
+      .bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .awards-grid { grid-template-columns: 1fr; }
+      .inara-intro { grid-template-columns: 1fr; gap: 3rem; }
+      .inara-stats { grid-template-columns: repeat(2, 1fr); }
+      .countries-grid { grid-template-columns: 1fr; }
+      .inara-cta { flex-direction: column; align-items: flex-start; }
+      .container { padding: 0 1.5rem; }
+      section { padding: 4rem 0; }
+      .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Arwa Damon</div>
+    <ul class="nav-links">
+      <li><a href="#biography">Biography</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#inara">INARA</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">War Correspondent &amp; Humanitarian</p>
+      <h1>Arwa<br /><em>Damon</em></h1>
+      <p class="hero-title-sub">Senior International Correspondent · Founder of INARA</p>
+      <p class="hero-desc">
+        One of the most decorated war correspondents of her generation, Arwa Damon has reported from the world's most dangerous conflict zones — driven by a profound commitment to bearing witness and amplifying the voices of those forgotten by history.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">20+</div>
+          <div class="stat-label">Years reporting</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Major Awards</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Languages spoken</div>
+        </div>
+      </div>
+      <div class="social-links">
+        <a class="social-link" href="https://x.com/IamArwaDamon" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @IamArwaDamon
+        </a>
+        <a class="social-link" href="https://www.instagram.com/iamarwadamon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Instagram
+        </a>
+        <a class="social-link" href="https://www.facebook.com/IamArwaDamon/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/in/arwa-damon-040407256/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="social-link" href="https://www.youtube.com/playlist?list=PLL1-Q4BMgZOTecriiDXl_ggvswKYoBxhJ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a class="social-link" href="https://menasource.substack.com/p/journalist-arwa-damon-on-conflict" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+          <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          Substack
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="Picture1.png" alt="Portrait of Arwa Damon" />
+      <div class="hero-quote">
+        <blockquote>"Bearing witness is not just a journalist's duty — it is humanity's obligation."</blockquote>
+        <cite>— Arwa Damon</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOGRAPHY -->
+  <section class="bio-strip" id="biography">
+    <div class="container">
+      <p class="section-label">Who she is</p>
+      <h2>Biography</h2>
+      <div class="divider"></div>
+      <div class="bio-grid">
+        <div class="bio-facts">
+          <div class="fact-item">
+            <span class="fact-key">Born</span>
+            <span class="fact-value">September 19, 1977 · Boston, Massachusetts, USA</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-key">Nationality</span>
+            <span class="fact-value">Syrian-American</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-key">Education</span>
+            <span class="fact-value">Skidmore College, B.A. French &amp; International Affairs, 1999 (Honors)</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-key">Languages</span>
+            <span class="fact-value">English · Arabic · French · Turkish</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-key">Based in</span>
+            <span class="fact-value">Istanbul, Turkey</span>
+          </div>
+          <div class="fact-item">
+            <span class="fact-key">Notable heritage</span>
+            <span class="fact-value">Granddaughter of Muhsin al-Barazi, former Prime Minister of Syria</span>
+          </div>
+        </div>
+        <div class="bio-body">
+          <p>
+            Born in Boston to an American father and a Syrian mother, Arwa Damon spent her early years in Wayland, Massachusetts before her family moved to Morocco and then to Istanbul, Turkey — where her father served as a teacher and director at Robert College. She skipped sixth grade and graduated with honors at 16, later earning her degree from Skidmore College.
+          </p>
+          <p>
+            It was the attacks of September 11, 2001 that set Damon on the path of journalism. She moved to Baghdad before the start of the Iraq War, beginning her career at CameraPlanet before transitioning to CNN as a freelance contributor in 2004 and becoming a full correspondent in 2006. Over the following sixteen years, she reported from some of the planet's most dangerous and heartbreaking places.
+          </p>
+          <p>
+            In June 2022, Damon left CNN to devote herself entirely to INARA, the humanitarian organization she co-founded in Beirut in 2015 — continuing her life's work of standing beside the world's most vulnerable populations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER TIMELINE -->
+  <section class="timeline-section" id="career">
+    <div class="container">
+      <p class="section-label">A life on the front lines</p>
+      <h2>Career Milestones</h2>
+      <div class="divider"></div>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2001 – 2004</div>
+          <div class="timeline-title">The Call to Report</div>
+          <p class="timeline-desc">Inspired by the September 11 attacks, Damon abandoned a career in textiles and moved to Baghdad ahead of the Iraq War. She joined CameraPlanet as a media supplier before embedding with CNN's Baghdad bureau as a freelancer in 2004.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2005 – 2007</div>
+          <div class="timeline-title">Chronicling Iraq</div>
+          <p class="timeline-desc">Damon covered all three Iraqi elections — January 2005, October's constitutional referendum, and December 2005 — as well as the historic trials and executions of Saddam Hussein and his senior officials in January 2007. She joined CNN as a full correspondent in 2006.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2011 – 2012</div>
+          <div class="timeline-title">Arab Spring &amp; Benghazi</div>
+          <p class="timeline-desc">As part of the CNN team that won a 2012 Emmy Award for outstanding coverage of the Egyptian Revolution, Damon documented the pivotal fall of President Mubarak. Following the 2012 Benghazi attack, she was among the first journalists on the scene and recovered the personal diary of slain Ambassador J. Christopher Stevens.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2013 – 2015</div>
+          <div class="timeline-title">Investigations Across Continents</div>
+          <p class="timeline-desc">Damon embedded with anti-poaching rangers in the Congo's Odzala National Park for her investigation <em>Ivory War</em>, then travelled to West Africa following the Chibok schoolgirls kidnapping. She covered the Syrian civil war extensively, including multiple reporting trips into refugee camps.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2016 – 2017</div>
+          <div class="timeline-title">Trapped in the Battle of Mosul</div>
+          <p class="timeline-desc">In one of her most harrowing assignments, Damon was embedded with Iraqi forces during the Battle of Mosul. Her convoy came under sustained IS fire, leaving her trapped for 28 hours in intense fighting before Iraqi reinforcements broke through to rescue them.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2018 – 2019</div>
+          <div class="timeline-title">Environment &amp; Exploration</div>
+          <p class="timeline-desc">Damon accompanied Greenpeace expeditions to Antarctica and the Arctic, reporting on catastrophic ice loss and the global climate crisis. She also reported from Nepal on the surge in fatalities among Everest climbers and helped keep the Thai cave rescue in the global spotlight.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022 – Present</div>
+          <div class="timeline-title">Full-Time Humanitarian Work</div>
+          <p class="timeline-desc">After departing CNN in June 2022, Damon focused entirely on INARA. She has entered the Gaza Strip four times to lead charity work during the ongoing conflict, continuing to place herself at the center of the world's most urgent humanitarian crises.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote">
+    <div class="container">
+      <blockquote><span class="quote-mark">"</span>I didn't become a journalist to be a spectator. I became one because I believe deeply in the power of a story to unlock the door of someone's indifference.<span class="quote-mark">"</span></blockquote>
+      <cite>— Arwa Damon</cite>
+    </div>
+  </div>
+
+  <!-- AWARDS -->
+  <section class="awards-section" id="awards">
+    <div class="container">
+      <p class="section-label">Recognition</p>
+      <h2>Awards &amp; Honors</h2>
+      <div class="divider"></div>
+      <div class="awards-grid">
+
+        <div class="award-card">
+          <div class="award-icon">🏆</div>
+          <div class="award-year">2012</div>
+          <div class="award-name">News &amp; Documentary Emmy Award</div>
+          <p class="award-desc">Outstanding Live Coverage of a Current News Story — Long Form, awarded for CNN's coverage of the Egyptian Revolution: <em>President Mubarak Steps Down</em>.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">🎖️</div>
+          <div class="award-year">2012</div>
+          <div class="award-name">IRE Award</div>
+          <p class="award-desc">Investigative Reporters and Editors award for her investigation of the Consulate attack in Benghazi, alongside photojournalist Sarmad Qaseera.</p>
+        </div>
+
+        <div class="award-card">
+          <div class="award-icon">✊</div>
+          <div class="award-year">2014</div>
+          <div class="award-name">Courage in Journalism Award</div>
+          <p class="award-desc">Presented by the International Women's Media Foundation (IWMF) for extraordinary bravery and commitment to journalism in the field.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INARA -->
+  <section class="inara-section" id="inara">
+    <div class="container">
+      <p class="section-label">Charitable work</p>
+      <div class="inara-heading">
+        <img src="inara-logo.png" alt="INARA logo" class="inara-logo" />
+        <div>
+          <h2>INARA</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+
+      <!-- INTRO + PROGRAMS -->
+      <div class="inara-intro">
+        <div class="inara-body">
+          <p class="inara-mission">A world where every child has the agency to create a dignified life.</p>
+          <p>
+            The <strong>International Network for Aid, Relief and Assistance (INARA)</strong> is a U.S.-registered 501(c)(3) humanitarian organization founded in 2015 by Arwa Damon. Established in response to critical gaps in the humanitarian system, INARA works to support children affected by conflict, displacement, and natural and human-induced disasters who are often unable to access sustained medical and psychosocial care.
+          </p>
+          <p>
+            INARA delivers integrated, child-centered programming that combines life-saving interventions with long-term recovery support. The organization focuses on children facing complex and overlapping vulnerabilities — including injury, trauma, disability, and exclusion from essential services. Through a multidisciplinary approach, INARA provides access to medical treatment, mental health and psychosocial support (MHPSS), and coordinated case management, ensuring continuity of care beyond the immediate emergency phase.
+          </p>
+          <p>
+            Its interventions span comprehensive medical and rehabilitative care; trauma-informed community-based MHPSS services; livelihood and economic empowerment to strengthen household stability; education in emergencies; WASH interventions; and a rapid emergency response capacity for immediate medical, psychosocial, food, and non-food assistance during acute crises.
+          </p>
+          <div class="inara-vmv">
+            <div class="vmv-item">
+              <span class="vmv-label">Vision</span>
+              <span class="vmv-text">A world where every child has the agency to create a dignified life.</span>
+            </div>
+            <div class="vmv-item">
+              <span class="vmv-label">Mission</span>
+              <span class="vmv-text">Fostering a future where we empower children to shape their own dignified lives.</span>
+            </div>
+            <div class="vmv-item">
+              <span class="vmv-label">Purpose</span>
+              <span class="vmv-text">Enhancing children's capacity to shape their own fulfilling futures through integrated health, empowerment, and community-driven interventions.</span>
+            </div>
+          </div>
+        </div>
+        <div class="inara-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Medical &amp; Rehabilitative Care</h4>
+              <p>Specialized treatment, long-term follow-up, and comprehensive rehabilitative care for injured and disabled children.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5Z"/><path d="M16 11h1a3 3 0 0 1 3 3 2 2 0 0 1-2 2h-1"/><path d="M8 11H7a3 3 0 0 0-3 3 2 2 0 0 0 2 2h1"/><path d="M12 16v6"/><path d="M9 22h6"/><path d="M9 13c0 2 1 3 3 3s3-1 3-3"/></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Mental Health &amp; MHPSS</h4>
+              <p>Trauma-informed, community-based mental health and psychosocial support services for children and families.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Education in Emergencies</h4>
+              <p>Safe, inclusive learning environments and livelihood empowerment to restore stability and future prospects.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="pillar-text">
+              <h4>Rapid Emergency Response</h4>
+              <p>Immediate deployment of medical, psychosocial, food, and non-food assistance during acute crises.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+      <div class="inara-stats">
+        <div class="inara-stat">
+          <div class="inara-stat-number">2015</div>
+          <div class="inara-stat-label">Founded in Beirut, Lebanon</div>
+        </div>
+        <div class="inara-stat">
+          <div class="inara-stat-number">6</div>
+          <div class="inara-stat-label">Active country programs</div>
+        </div>
+        <div class="inara-stat">
+          <div class="inara-stat-number">100%</div>
+          <div class="inara-stat-label">Of donations go to children in need</div>
+        </div>
+        <div class="inara-stat">
+          <div class="inara-stat-number">501c3</div>
+          <div class="inara-stat-label">US Non-profit · EIN 46-5355232</div>
+        </div>
+      </div>
+
+      <!-- ACTIVE PROGRAMS BY COUNTRY -->
+      <div class="inara-countries">
+        <h3>Active Programs</h3>
+        <p>INARA currently operates across six countries, delivering holistic care in some of the world's most challenging environments.</p>
+        <div class="countries-grid">
+          <a class="country-card" href="https://inara.org/gaza" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Palestine</div>
+            <div class="country-programs">Medical · Food Support · Mental Health · Education · Housing</div>
+          </a>
+          <a class="country-card" href="https://inara.org/syria" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Syria</div>
+            <div class="country-programs">Medical · Mental Health · Education</div>
+          </a>
+          <a class="country-card" href="https://inara.org/egypt" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Egypt</div>
+            <div class="country-programs">Medical · Mental Health · Assistance · Education</div>
+          </a>
+          <a class="country-card" href="https://inara.org/turkiye" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Türkiye</div>
+            <div class="country-programs">Medical · Mental Health · Assistance · Education</div>
+          </a>
+          <a class="country-card" href="https://inara.org/afghanistan" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Afghanistan</div>
+            <div class="country-programs">Orphan Sponsorship · Food &amp; Non-food Support</div>
+          </a>
+          <a class="country-card" href="https://inara.org/lebanon" target="_blank" rel="noopener noreferrer">
+            <div class="country-name">Lebanon</div>
+            <div class="country-programs">Medical · Mental Health · Emergency Displacement Response</div>
+          </a>
+        </div>
+
+        <div class="inara-cta">
+          <a class="btn-primary" href="https://inara.org/donate/" target="_blank" rel="noopener noreferrer">Donate to INARA</a>
+          <a class="btn-secondary" href="https://inara.org" target="_blank" rel="noopener noreferrer">Visit inara.org</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">Arwa Damon</div>
+        <p class="footer-copy">Born September 19, 1977 · Boston, Massachusetts</p>
+        <div class="footer-social">
+          <a href="https://x.com/IamArwaDamon" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/iamarwadamon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/IamArwaDamon/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/arwa-damon-040407256/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/playlist?list=PLL1-Q4BMgZOTecriiDXl_ggvswKYoBxhJ" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://menasource.substack.com/p/journalist-arwa-damon-on-conflict" target="_blank" rel="noopener noreferrer" aria-label="Substack">
+            <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
