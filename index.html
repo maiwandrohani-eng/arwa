@@ -779,9 +779,12 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-toggle { display: inline-flex; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-text { padding: 8rem 1.8rem 3rem; }
-      .hero-image { height: 55vh; }
+      /* Let the hero grow naturally on small screens (avoid clipping). */
+      .hero { grid-template-columns: 1fr; min-height: auto; overflow: visible; }
+      .hero-text { padding: 7rem 1.8rem 2.5rem; }
+      .hero-stats { flex-wrap: wrap; gap: 1.2rem; }
+      .hero-image { height: min(56vh, 520px); min-height: 320px; }
+      .hero-image img { object-position: center 20%; }
       .hero-quote { right: 1.5rem; bottom: 1.5rem; max-width: 220px; }
       .bio-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .awards-grid { grid-template-columns: 1fr; }
