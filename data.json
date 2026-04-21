@@ -1,6 +1,70 @@
 {
   "articles": [
     {
+      "id": "a16",
+      "title": "Iran’s Afghan Refugees Flee Homeward",
+      "publication": "New Lines Magazine",
+      "date": "2026-03-23",
+      "url": "https://newlinesmag.com/spotlight/irans-afghan-refugees-flee-homeward/",
+      "excerpt": "Thousands are returning daily at the Islam Qala border crossing as Afghans trade precarious life in Iran for an uncertain future in Afghanistan."
+    },
+    {
+      "id": "a17",
+      "title": "Bringing Color Back to Syria",
+      "publication": "New Lines Magazine",
+      "date": "2025-01-13",
+      "url": "https://newlinesmag.com/spotlight/bringing-color-back-to-syria/",
+      "excerpt": "A reflection on wartime trauma among Syria’s children and the long road toward healing."
+    },
+    {
+      "id": "a18",
+      "title": "The Devastation of Lebanon",
+      "publication": "New Lines Magazine",
+      "date": "2024-10-04",
+      "url": "https://newlinesmag.com/spotlight/the-devastation-of-lebanon/",
+      "excerpt": "Why many Lebanese view the latest strikes not as a war on Hezbollah, but as a war on everyone."
+    },
+    {
+      "id": "a19",
+      "title": "Gaza in a Million Pieces",
+      "publication": "New Lines Magazine",
+      "date": "2024-04-12",
+      "url": "https://newlinesmag.com/spotlight/gaza-in-a-million-pieces/",
+      "excerpt": "After six months, Damon is allowed into Gaza and finds a war being waged mainly against children."
+    },
+    {
+      "id": "a20",
+      "title": "Former CNN reporter Arwa Damon on the war in Ukraine one year later and the need for aid in Turkey and Syria",
+      "publication": "CNN (Impact Your World)",
+      "date": "2023-02-22",
+      "url": "https://edition.cnn.com/2023/02/22/us/iyw-arwa-damon-ukraine-turkey/index.html",
+      "excerpt": "Damon discusses the war in Ukraine, disaster response after the Turkey-Syria earthquake, and why she founded INARA."
+    },
+    {
+      "id": "a21",
+      "title": "Gaza under siege: A doctor recounts the humanitarian cost of war",
+      "publication": "Atlantic Council (MENASource)",
+      "date": "2023-10-12",
+      "url": "https://www.atlanticcouncil.org/blogs/menasource/gaza-hamas-seige-doctor/",
+      "excerpt": "A firsthand account from surgeon Ghassan Abu Sitta of Gaza’s collapsing healthcare system under siege."
+    },
+    {
+      "id": "a22",
+      "title": "I covered the battle against ISIS in Mosul. Gaza’s challenges will make it look like child’s play.",
+      "publication": "Atlantic Council (MENASource)",
+      "date": "2023-11-15",
+      "url": "https://www.atlanticcouncil.org/blogs/menasource/gaza-mosul-isis-hamas-israel/",
+      "excerpt": "Damon draws hard-earned lessons from Mosul to explain why Gaza’s battlefield realities and humanitarian stakes are even more severe."
+    },
+    {
+      "id": "a23",
+      "title": "I spent two decades as a CNN correspondent. We journalists need to do a better job reporting the truth.",
+      "publication": "Atlantic Council (MENASource)",
+      "date": "2023-10-24",
+      "url": "https://www.atlanticcouncil.org/blogs/menasource/cnn-media-truth-gaza-israel-hamas/",
+      "excerpt": "An argument for journalism that confronts propaganda, dehumanization, and polarization—especially in wartime."
+    },
+    {
       "id": "a1",
       "title": "Journalist Arwa Damon on Conflict, Humanity and the Stories That Stay With You",
       "publication": "MENASource / Substack",
@@ -167,6 +231,105 @@
   ],
   "interviews": [
     {
+      "id": "i10",
+      "title": "“The War Hasn’t Ended”: Palestinians in Gaza Still Face Israeli Attacks, Disease, Medical Neglect",
+      "outlet": "Democracy Now!",
+      "date": "2026-02-09",
+      "url": "https://www.democracynow.org/2026/2/9/gaza_update",
+      "description": "Damon discusses ongoing conditions in Gaza, restrictions on medical care, and the continued humanitarian toll after a partial reopening of Rafah.",
+      "type": "TV Interview"
+    },
+    {
+      "id": "i11",
+      "title": "Inside Gaza: Arwa Damon on Crisis, Resilience, and Access",
+      "outlet": "Breaking Banks (iHeart)",
+      "date": "2025-12-04",
+      "url": "https://www.iheart.com/podcast/256-breaking-banks-31077276/episode/inside-gaza-arwa-damon-on-crisis-310914915/",
+      "description": "A discussion of humanitarian conditions in Gaza and the realities of delivering aid through INARA.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i12",
+      "title": "Inside Gaza: Arwa Damon on Crisis, Resilience, and Access",
+      "outlet": "The Futurists (Provoke.fm)",
+      "date": "2025-12-06",
+      "url": "https://provoke.fm/inside-gaza-arwa-damon-on-crisis-resilience-and-access-2/",
+      "description": "Damon shares a firsthand look at Gaza’s humanitarian crisis and what access constraints mean for civilians.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i13",
+      "title": "Is the Hunger Crisis in Gaza a Tipping Point in the War?",
+      "outlet": "CNN One Thing",
+      "date": "2025-07-30",
+      "url": "https://www.cnn.com/audio/podcasts/one-thing/episodes/9837d0a6-29c6-11ef-8cc2-3b35c8491944",
+      "description": "Damon joins CNN’s One Thing to discuss aid access, famine risk, and what would be required for meaningful relief in Gaza.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i14",
+      "title": "Battling Back Against Trump (Amanpour)",
+      "outlet": "CNN Audio (Amanpour)",
+      "date": "2025-04-02",
+      "url": "https://www.cnn.com/audio/podcasts/amanpour/episodes/72d7faf8-2993-11ef-9655-9b68bdb55492",
+      "description": "Damon appears on Amanpour to discuss humanitarian realities in Gaza and INARA’s work.",
+      "type": "TV Interview"
+    },
+    {
+      "id": "i15",
+      "title": "The War We Don’t See — with Arwa Damon",
+      "outlet": "New Lines Magazine (The Lede)",
+      "date": "2025-04-11",
+      "url": "https://newlinesmag.com/podcast/the-war-we-dont-see/",
+      "description": "Damon discusses why wars fade from public attention, the personal cost of witnessing conflict, and being denied entry into Gaza.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i16",
+      "title": "The Emotional Fog of War — with Arwa Damon",
+      "outlet": "New Lines Magazine (The Lede)",
+      "date": "2023-11-24",
+      "url": "https://newlinesmag.com/podcast/the-emotional-fog-of-war-with-arwa-damon/",
+      "description": "A conversation about trauma, misinformation, and how emotion shapes decisions in conflicts like the Gaza war.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i17",
+      "title": "‘Seize The Summit’: War refugees climb Kilimanjaro in a new documentary",
+      "outlet": "CNN (Amanpour)",
+      "date": "2024-10-25",
+      "url": "https://www.cnn.com/2024/10/25/Tv/video/amanpour-arwa-damon-kilimanjaro",
+      "description": "Damon discusses her documentary 'Seize the Summit' following young war survivors climbing Mount Kilimanjaro.",
+      "type": "Video"
+    },
+    {
+      "id": "i18",
+      "title": "“A Sea of Misery”: Gaza Is Unlike Anything I’ve Ever Seen",
+      "outlet": "Democracy Now!",
+      "date": "2024-04-09",
+      "url": "https://www.democracynow.org/2024/4/9/arwa_damon_gaza",
+      "description": "Damon describes conditions in Gaza after a humanitarian trip and argues for scaling up aid and humanitarian access.",
+      "type": "TV Interview"
+    },
+    {
+      "id": "i19",
+      "title": "“Beyond Atrocious”: Arwa Damon on Desperation & Hunger in Gaza as Israel Continues Blocking Most Aid",
+      "outlet": "Democracy Now!",
+      "date": "2025-07-30",
+      "url": "https://www.democracynow.org/2025/7/30/gaza_aid",
+      "description": "Damon discusses starvation conditions, barriers to aid delivery, and what she is witnessing through INARA’s work.",
+      "type": "TV Interview"
+    },
+    {
+      "id": "i20",
+      "title": "Lessons in compassion from the frontline",
+      "outlet": "TEDxCoventGardenWomen",
+      "date": "2017-11-01",
+      "url": "https://www.ted.com/talks/arwa_damon_lessons_in_compassion_from_the_frontline",
+      "description": "A TEDx talk on compassion, witnessing suffering, and why small acts of kindness matter in the aftermath of war.",
+      "type": "Talk"
+    },
+    {
       "id": "i1",
       "title": "As a CNN War Reporter, Arwa Damon Thought She Had Seen Everything. Then She Went to Gaza.",
       "outlet": "Haaretz Magazine",
@@ -249,6 +412,69 @@
     }
   ],
   "events": [
+    {
+      "id": "e10",
+      "title": "World Affairs Conference (WAC 2026)",
+      "type": "Conference Speaker",
+      "date": "2026-02-25",
+      "location": "Toronto, Canada",
+      "description": "Plenary speaker at the World Affairs Conference (theme: Power in Perspective).",
+      "url": "https://worldaffairscon.org/"
+    },
+    {
+      "id": "e11",
+      "title": "Seize the Summit: Screening & Conversation",
+      "type": "Screening & Q&A",
+      "date": "2026-02-18",
+      "location": "Anchorage Museum, Anchorage, Alaska, USA",
+      "description": "Screening of 'Seize the Summit' followed by discussion and Q&A with Arwa Damon.",
+      "url": "https://alaskaworldaffairs.org/events/seize-the-summit-screening-conversation/"
+    },
+    {
+      "id": "e12",
+      "title": "DIHAD 2025 Keynote: “Holding onto our humanity: Combatting Propaganda”",
+      "type": "Keynote",
+      "date": "2025-04-30",
+      "location": "Dubai World Trade Centre, Dubai, UAE",
+      "description": "Keynote address at the Dubai International Humanitarian Aid & Development Conference (DIHAD).",
+      "url": "https://dihad.org/conference-program-2025/"
+    },
+    {
+      "id": "e13",
+      "title": "ZEG 2025: “The Future of Aid — What Happens When the Safety Net Vanishes?”",
+      "type": "Panel",
+      "date": "2025-06-13",
+      "location": "Tbilisi, Georgia",
+      "description": "Panel conversation on the aid system’s collapse and what comes next, featuring Arwa Damon.",
+      "url": "https://www.zegfest.com/program-zeg-2025"
+    },
+    {
+      "id": "e14",
+      "title": "ZEG 2025: “Waging Peace: When Waiting Isn’t an Option”",
+      "type": "Panel",
+      "date": "2025-06-15",
+      "location": "Tbilisi, Georgia",
+      "description": "A conversation on pursuing reconciliation during wartime, featuring Arwa Damon.",
+      "url": "https://www.zegfest.com/program-zeg-2025"
+    },
+    {
+      "id": "e15",
+      "title": "Through Arwa Damon's Lens: Seize the Summit",
+      "type": "Screening & Q&A",
+      "date": "2024-02-14",
+      "location": "NYU Abu Dhabi, Abu Dhabi, UAE",
+      "description": "Screening of 'Seize the Summit' followed by Q&A with director Arwa Damon.",
+      "url": "https://nyuad.nyu.edu/en/events/2024/february/through-arwa-damon-s-lens-seize-the-summit.html"
+    },
+    {
+      "id": "e16",
+      "title": "Doha Forum 2024",
+      "type": "Conference Speaker",
+      "date": "2024-12-07",
+      "location": "Doha, Qatar",
+      "description": "Speaker at Doha Forum 2024 (theme: The Innovation Imperative).",
+      "url": "https://dohaforum.org/2024/speakers/arwa-damon"
+    },
     {
       "id": "e0",
       "title": "Seize the Summit",
