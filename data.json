@@ -49,6 +49,7 @@
       "excerpt": "Damon speaks directly about the healthcare crisis inside Gaza and the moral weight of witnessing systematic destruction of civilian infrastructure."
     },
     {
+      "id": "a6",
       "title": "The arduous system for getting aid into Gaza",
       "publication": "NPR",
       "date": "2025-08-12",
@@ -56,6 +57,7 @@
       "excerpt": "Arwa Damon’s charity — International Network for Aid, Relief and Assistance — has tried to send aid to Gaza, facing rejections and obstacles. The episode discusses the economics of running a humanitarian nonprofit and barriers to aid delivery."
     },
     {
+      "id": "a7",
       "title": "How generational trauma among Israelis and Palestinians fuels the cycles of violence",
       "publication": "NPR",
       "date": "2023-10-14",
@@ -63,6 +65,7 @@
       "excerpt": "NPR's Scott Detrow speaks with Arwa Damon, former international foreign correspondent for CNN, about the impact of trauma on Israelis and Palestinians as a result of successive eruptions of violence."
     },
     {
+      "id": "a8",
       "title": "A 'Devastating Scale' Of Suffering In Syria",
       "publication": "NPR",
       "date": "2020-02-23",
@@ -70,6 +73,7 @@
       "excerpt": "NPR's Lulu Garcia-Navarro speaks to CNN's Arwa Damon about the unfolding humanitarian crisis in Idlib as Turkish and Russian-backed Syrian government forces fight for control of the territory."
     },
     {
+      "id": "a9",
       "title": "For Days, Turkey Has Been Targeting Kurds In Northern Syria",
       "publication": "NPR",
       "date": "2019-10-13",
@@ -77,6 +81,7 @@
       "excerpt": "As Turkey continues its attack against Kurdish towns in northern Syria, NPR's Lulu Garcia-Navarro speaks to CNN correspondent Arwa Damon, who is reporting near Turkey's border with Syria."
     },
     {
+      "id": "a10",
       "title": "CNN Defends Reporting On Slain Ambassador's Diary",
       "publication": "NPR",
       "date": "2012-09-25",
@@ -84,6 +89,7 @@
       "excerpt": "CNN reporter Arwa Damon found Ambassador Stevens' personal journal in Benghazi, revealing his fears about security threats. The report sparked debate about journalistic ethics."
     },
     {
+      "id": "a11",
       "title": "A Passion To Bear Witness: Why War Correspondents Take The Risk",
       "publication": "NPR",
       "date": "2012-02-17",
@@ -91,6 +97,7 @@
       "excerpt": "CNN's Arwa Damon made it into Homs, Syria, under siege, to report on the conflict. The article explores the motivations and risks for war correspondents."
     },
     {
+      "id": "a12",
       "title": "Trial Looms For Sole Defendant In 2012 Benghazi Attack That Killed Ambassador",
       "publication": "NPR",
       "date": "2017-08-23",
@@ -98,6 +105,7 @@
       "excerpt": "Coverage of the Benghazi attack, with reporting from Arwa Damon on the ground, as the trial for the accused begins in Washington, D.C."
     },
     {
+      "id": "a13",
       "title": "INARA’s Mobile Clinic in Syria",
       "publication": "INARA",
       "date": "2025-08-09",
@@ -105,6 +113,7 @@
       "excerpt": "INARA’s mobile clinic, led by Arwa Damon’s organization, reaches vulnerable communities in Syria, providing medical care in remote areas."
     },
     {
+      "id": "a14",
       "title": "A Humanitarian crisis on the Afghan-Iranian borders",
       "publication": "INARA",
       "date": "2025-07-17",
@@ -112,6 +121,7 @@
       "excerpt": "INARA, founded by Arwa Damon, assesses urgent needs at the Afghan-Iranian border amid a rapidly escalating humanitarian crisis."
     },
     {
+      "id": "a15",
       "title": "Food parcels for displaced Gazan families in Egypt",
       "publication": "INARA",
       "date": "2025-07-11",
@@ -201,6 +211,7 @@
       "type": "Profile"
     },
     {
+      "id": "i5",
       "title": "The arduous system for getting aid into Gaza",
       "outlet": "NPR - The Indicator from Planet Money",
       "date": "2025-08-12",
@@ -209,6 +220,7 @@
       "type": "Podcast"
     },
     {
+      "id": "i6",
       "title": "How generational trauma among Israelis and Palestinians fuels the cycles of violence",
       "outlet": "NPR",
       "date": "2023-10-14",
@@ -217,6 +229,7 @@
       "type": "Radio Interview"
     },
     {
+      "id": "i7",
       "title": "A 'Devastating Scale' Of Suffering In Syria",
       "outlet": "NPR",
       "date": "2020-02-23",
@@ -225,6 +238,7 @@
       "type": "Radio Interview"
     },
     {
+      "id": "i8",
       "title": "For Days, Turkey Has Been Targeting Kurds In Northern Syria",
       "outlet": "NPR",
       "date": "2019-10-13",
@@ -233,6 +247,7 @@
       "type": "Radio Interview"
     },
     {
+      "id": "i9",
       "title": "A Passion To Bear Witness: Why War Correspondents Take The Risk",
       "outlet": "NPR",
       "date": "2012-02-17",
@@ -243,6 +258,7 @@
   ],
   "events": [
     {
+      "id": "e0",
       "title": "Seize the Summit",
       "type": "Screening & Conversation",
       "date": "2026-05-26",
@@ -251,6 +267,7 @@
       "url": "mailto:farieha@malalafund.org"
     },
     {
+      "id": "e1",
       "title": "INARA’s Mobile Clinic Launch",
       "type": "Humanitarian Event",
       "date": "2025-08-09",
@@ -259,6 +276,7 @@
       "url": "https://inara.org/inaras-mobile-clinic-in-syria/"
     },
     {
+      "id": "e2",
       "title": "INARA Field Assessment at Afghan-Iranian Border",
       "type": "Humanitarian Event",
       "date": "2025-07-17",
@@ -267,6 +285,7 @@
       "url": "https://inara.org/a-humanitarian-crisis-on-the-afghan-iranian-borders/"
     },
     {
+      "id": "e3",
       "title": "Food Parcel Distribution for Displaced Gazans",
       "type": "Humanitarian Event",
       "date": "2025-07-11",
