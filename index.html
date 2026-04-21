@@ -1955,7 +1955,8 @@
     const g = document.getElementById('articles-grid');
     if (!g) return;
     if (!siteData.articles.length) { g.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No articles yet.</p>'; return; }
-    g.innerHTML = siteData.articles.map(a => `
+    const sorted = [...siteData.articles].sort((a, b) => new Date(b.date) - new Date(a.date));
+    g.innerHTML = sorted.map(a => `
       <a class="content-card" href="${a.url||'#'}" target="${a.url?'_blank':'_self'}" rel="noopener noreferrer">
         <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'articles','${a.id}')">&#x2715;</button>
         <span class="content-card-pub">${a.publication||''}</span>
@@ -1994,7 +1995,8 @@
     const g = document.getElementById('interviews-grid');
     if (!g) return;
     if (!siteData.interviews.length) { g.innerHTML = '<p style="color:var(--text-muted)">No interviews yet.</p>'; return; }
-    g.innerHTML = siteData.interviews.map(i => `
+    const sorted = [...siteData.interviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+    g.innerHTML = sorted.map(i => `
       <a class="interview-card" href="${i.url||'#'}" target="${i.url?'_blank':'_self'}" rel="noopener noreferrer" style="position:relative">
         <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'interviews','${i.id}')">&#x2715;</button>
         <div class="interview-meta">
@@ -2014,7 +2016,8 @@
     const g = document.getElementById('events-grid');
     if (!g) return;
     if (!siteData.events.length) { g.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No events yet.</p>'; return; }
-    g.innerHTML = siteData.events.map(e => `
+    const sorted = [...siteData.events].sort((a, b) => new Date(b.date) - new Date(a.date));
+    g.innerHTML = sorted.map(e => `
       <div class="event-card">
         <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'events','${e.id}')">&#x2715;</button>
         <div class="pillar-icon">
