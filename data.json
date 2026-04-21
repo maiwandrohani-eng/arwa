@@ -1,0 +1,143 @@
+{
+  "articles": [
+    {
+      "id": "a1",
+      "title": "Journalist Arwa Damon on Conflict, Humanity and the Stories That Stay With You",
+      "publication": "MENASource / Substack",
+      "date": "2024-03-15",
+      "url": "https://menasource.substack.com/p/journalist-arwa-damon-on-conflict",
+      "excerpt": "Arwa Damon reflects on two decades of war reporting, the psychological cost of bearing witness, and why she ultimately chose humanitarian work over the camera."
+    },
+    {
+      "id": "a2",
+      "title": "On the Ground in Gaza — With Arwa Damon",
+      "publication": "New Lines Magazine",
+      "date": "2024-04-19",
+      "url": "https://newlinesmag.com/podcast/on-the-ground-in-gaza-with-arwa-damon/",
+      "excerpt": "Damon discusses her four entries into the Gaza Strip to lead INARA's humanitarian response, and the scenes she encountered that even decades of war reporting could not prepare her for."
+    },
+    {
+      "id": "a3",
+      "title": "With Israel's Expanding War, My Colleagues in Gaza Fear a 'Death Blow'",
+      "publication": "The New Humanitarian",
+      "date": "2025-05-08",
+      "url": "https://www.thenewhumanitarian.org/opinion/2025/05/08/israel-war-plan-take-over-aid-palestine-gaza-fear",
+      "excerpt": "A first-person account of the deteriorating humanitarian conditions in Gaza and the threat posed by plans to restructure aid delivery."
+    },
+    {
+      "id": "a4",
+      "title": "Arctic Melt: Threat Beneath the Ice",
+      "publication": "CNN",
+      "date": "2019-06-08",
+      "url": "https://edition.cnn.com/2019/06/08/world/arctic-beneath-ice-intl/index.html",
+      "excerpt": "Reporting from a Greenpeace expedition to the Arctic, Damon documents the alarming pace of polar ice loss and its consequences for global ecosystems."
+    },
+    {
+      "id": "a5",
+      "title": "Palestinians Feel They Are Being 'Slowly Exterminated'",
+      "publication": "Democracy Now!",
+      "date": "2024-11-14",
+      "url": "https://www.democracynow.org/2024/11/14/arwa_damon_gaza_healthcare",
+      "excerpt": "Damon speaks directly about the healthcare crisis inside Gaza and the moral weight of witnessing systematic destruction of civilian infrastructure."
+    }
+  ],
+  "videos": [
+    {
+      "id": "v1",
+      "title": "Arwa Damon on Her Motivation to Cover the Syrian Conflict",
+      "description": "Damon speaks candidly about what draws her to Syria, the human stories behind the statistics, and what motivates a journalist to keep returning to a warzone.",
+      "youtubeId": "5GNRYhlXiLE",
+      "date": "2016-09-01"
+    },
+    {
+      "id": "v2",
+      "title": "Arwa Damon Investigates: Ivory War",
+      "description": "Embedded with anti-poaching rangers in the Republic of Congo's Odzala National Park, Damon investigates the illegal ivory trade decimating elephant populations.",
+      "youtubeId": "XqV87omfT2M",
+      "date": "2014-01-01"
+    },
+    {
+      "id": "v3",
+      "title": "Children Are Crying Out in Agony for Food — Gaza Crisis",
+      "description": "Arwa Damon joins CNN's Wolf Blitzer to describe the catastrophic food shortage inside Gaza and INARA's efforts to deliver emergency nutrition.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "date": "2025-06-02"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "i1",
+      "title": "As a CNN War Reporter, Arwa Damon Thought She Had Seen Everything. Then She Went to Gaza.",
+      "outlet": "Haaretz Magazine",
+      "date": "2024-06-21",
+      "url": "https://www.haaretz.com/israel-news/2024-06-21/ty-article-magazine/.highlight/as-a-cnn-war-reporter-arwa-damon-thought-she-had-seen-everything-then-she-went-to-gaza/00000190-3bdd-d768-adf8-3fff8a400000",
+      "description": "In a rare long-form interview, Damon opens up about leaving CNN, founding INARA, and how Gaza tested every limit of what she thought she knew about human suffering.",
+      "type": "Magazine"
+    },
+    {
+      "id": "i2",
+      "title": "Media People: CNN's Arwa Damon on War Reporting, Tattoos and Close Calls",
+      "outlet": "Women's Wear Daily",
+      "date": "2017-11-10",
+      "url": "https://wwd.com/business-news/media/media-people-cnns-arwa-damon-on-war-reporting-tattoos-and-close-calls-11042190/",
+      "description": "An intimate profile exploring Damon's personal philosophy, the physical and emotional toll of conflict journalism, and the stories she will never forget.",
+      "type": "Profile"
+    },
+    {
+      "id": "i3",
+      "title": "A Humanitarian Aid Crisis in Gaza — The Excerpt Podcast",
+      "outlet": "iHeart / The Excerpt",
+      "date": "2025-04-10",
+      "url": "https://www.iheart.com/podcast/272-the-excerpt-28847577/episode/a-humanitarian-aid-crisis-in-gaza-275922485/",
+      "description": "Damon joins the podcast to break down the layers of the Gaza humanitarian crisis and what INARA's on-the-ground teams are witnessing.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i4",
+      "title": "Getting There: CNN's Arwa Damon",
+      "outlet": "Politico",
+      "date": "2014-03-10",
+      "url": "https://www.politico.com/story/2014/03/getting-there-cnn-correspondent-arwa-damon-104445.html",
+      "description": "How a young woman who sold bathrobes online became one of the most recognisable faces of frontline war reporting. Damon traces her unlikely path to journalism.",
+      "type": "Profile"
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "title": "INARA Annual Fundraising Gala",
+      "type": "Fundraiser",
+      "date": "2024-11-20",
+      "location": "New York, USA",
+      "description": "Arwa Damon hosts INARA's annual fundraiser, sharing stories from the field and presenting the organization's impact report for 2024.",
+      "url": "https://inara.org/get-involved/"
+    },
+    {
+      "id": "e2",
+      "title": "Panel: Journalism, Humanitarian Action & the Ethics of Witnessing",
+      "type": "Conference",
+      "date": "2024-09-12",
+      "location": "Geneva, Switzerland",
+      "description": "Damon joins a panel of senior journalists and humanitarian leaders to discuss the responsibilities that come with documenting conflict, and where journalism ends and action must begin.",
+      "url": ""
+    },
+    {
+      "id": "e3",
+      "title": "Courage in Journalism Award Ceremony — IWMF",
+      "type": "Award Ceremony",
+      "date": "2014-10-22",
+      "location": "New York, USA",
+      "description": "Arwa Damon receives the 2014 Courage in Journalism Award from the International Women's Media Foundation, recognising her fearless reporting from Iraq, Syria, and Libya.",
+      "url": "https://www.iwmf.org"
+    },
+    {
+      "id": "e4",
+      "title": "Keynote: Bearing Witness — The Journalist as Humanitarian",
+      "type": "Keynote",
+      "date": "2023-05-03",
+      "location": "Beirut, Lebanon",
+      "description": "Speaking at a media and civil society forum in Beirut, Damon discusses the evolution of her career and the founding of INARA as a natural extension of bearing witness.",
+      "url": ""
+    }
+  ]
+}

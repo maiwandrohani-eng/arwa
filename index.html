@@ -735,7 +735,381 @@
       .container { padding: 0 1.5rem; }
       section { padding: 4rem 0; }
       .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
+      .dyn-tabs { overflow-x: auto; }
+      .content-grid { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      .events-grid { grid-template-columns: 1fr; }
     }
+
+    /* ─── DYNAMIC SECTIONS ─── */
+    .dyn-section { background: var(--dark-2); border-top: 1px solid rgba(201,168,76,0.1); }
+    .dyn-section:nth-child(even) { background: var(--dark); }
+
+    .dyn-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      margin-bottom: 3rem;
+    }
+    .dyn-tab {
+      padding: 0.75rem 1.8rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .dyn-tab:hover { color: var(--text); }
+    .dyn-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* Articles */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .content-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      padding: 1.8rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: border-color 0.25s, transform 0.25s;
+      position: relative;
+    }
+    .content-card:hover { border-color: rgba(201,168,76,0.32); transform: translateY(-2px); }
+    .content-card-pub {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .content-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .content-card-excerpt {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .content-card-date {
+      font-size: 0.72rem;
+      color: rgba(158,152,144,0.6);
+      margin-top: 0.4rem;
+    }
+    .content-card-arrow {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      opacity: 0;
+      color: var(--gold);
+      font-size: 1.1rem;
+      transition: opacity 0.2s;
+    }
+    .content-card:hover .content-card-arrow { opacity: 1; }
+
+    /* Videos */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .video-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .video-card:hover { border-color: rgba(201,168,76,0.32); }
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--dark-4);
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .video-card:hover .video-thumb img { transform: scale(1.04); }
+    .video-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+    }
+    .video-play svg { width: 48px; height: 48px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5)); }
+    .video-info { padding: 1.2rem 1.4rem; }
+    .video-date { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+    .video-title { font-family: 'Playfair Display', serif; font-size: 1rem; line-height: 1.4; margin-bottom: 0.5rem; }
+    .video-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+    .video-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-modal-overlay.open { display: flex; }
+    .video-modal {
+      width: min(880px, 92vw);
+      position: relative;
+    }
+    .video-modal iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Interviews */
+    .interview-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .interview-card {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.6rem;
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: border-color 0.25s;
+    }
+    .interview-card:hover { border-color: rgba(201,168,76,0.32); }
+    .interview-meta { text-align: center; }
+    .interview-type {
+      display: inline-block;
+      font-size: 0.66rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--gold);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.4rem;
+    }
+    .interview-outlet { font-size: 0.78rem; color: var(--text-muted); }
+    .interview-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; line-height: 1.4; color: var(--text); margin-bottom: 0.4rem; }
+    .interview-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .interview-arrow { color: var(--gold); font-size: 1.3rem; opacity: 0.5; transition: opacity 0.2s; }
+    .interview-card:hover .interview-arrow { opacity: 1; }
+
+    /* Events */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .event-card {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: 2px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: border-color 0.25s;
+    }
+    .event-card:hover { border-color: rgba(201,168,76,0.32); }
+    .event-type-tag {
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .event-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.4; }
+    .event-location { font-size: 0.82rem; color: var(--text-muted); }
+    .event-date { font-size: 0.75rem; color: rgba(158,152,144,0.6); }
+    .event-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.3rem; }
+    .event-link { display: inline-block; margin-top: 0.6rem; font-size: 0.75rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
+    .event-link:hover { text-decoration: underline; }
+
+    /* Add button */
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .admin-add-btn {
+      display: none;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 2px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+    }
+    .admin-add-btn:hover { background: rgba(201,168,76,0.22); }
+    body.admin-mode .admin-add-btn { display: flex; }
+    .admin-delete-btn {
+      display: none;
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      width: 22px;
+      height: 22px;
+      background: rgba(181,69,42,0.8);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.9rem;
+      line-height: 1;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    body.admin-mode .admin-delete-btn { display: flex; }
+    .content-card, .event-card { position: relative; }
+
+    /* Admin panel */
+    .admin-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 200;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--dark-4);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .admin-fab:hover { border-color: var(--gold); color: var(--gold); }
+    body.admin-mode .admin-fab { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+
+    .admin-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .admin-modal-overlay.open { display: flex; }
+    .admin-modal {
+      background: var(--dark-3);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      width: min(600px, 96vw);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.5rem;
+    }
+    .admin-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--gold);
+    }
+    .admin-field { margin-bottom: 1.2rem; }
+    .admin-field label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .admin-field input,
+    .admin-field textarea,
+    .admin-field select {
+      width: 100%;
+      background: var(--dark-4);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 2px;
+      padding: 0.65rem 0.85rem;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .admin-field input:focus,
+    .admin-field textarea:focus,
+    .admin-field select:focus { border-color: var(--gold); }
+    .admin-field textarea { resize: vertical; min-height: 80px; }
+    .admin-field select option { background: var(--dark-3); }
+    .admin-btns { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+    .admin-save-btn {
+      flex: 1;
+      padding: 0.75rem;
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.2s;
+    }
+    .admin-save-btn:hover { background: var(--gold-light); }
+    .admin-cancel-btn {
+      padding: 0.75rem 1.5rem;
+      background: none;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 2px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .admin-cancel-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .admin-login-hint { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 1rem; }
   </style>
 </head>
 <body>
@@ -748,6 +1122,9 @@
       <li><a href="#career">Career</a></li>
       <li><a href="#awards">Awards</a></li>
       <li><a href="#inara">INARA</a></li>
+      <li><a href="#content">Articles</a></li>
+      <li><a href="#content">Videos</a></li>
+      <li><a href="#content">Events</a></li>
     </ul>
   </nav>
 
@@ -1099,6 +1476,103 @@
     </div>
   </section>
 
+  <!-- DYNAMIC CONTENT SECTION -->
+  <section class="dyn-section" id="content">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Explore her work</p>
+          <h2>Articles, Videos &amp; Events</h2>
+          <div class="divider"></div>
+        </div>
+      </div>
+
+      <div class="dyn-tabs">
+        <button class="dyn-tab active" data-tab="articles">Articles</button>
+        <button class="dyn-tab" data-tab="videos">Videos</button>
+        <button class="dyn-tab" data-tab="interviews">Interviews</button>
+        <button class="dyn-tab" data-tab="events">Events</button>
+      </div>
+
+      <!-- Articles -->
+      <div id="tab-articles">
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <span></span>
+          <button class="admin-add-btn" onclick="openAddModal('articles')">+ Add Article</button>
+        </div>
+        <div class="content-grid" id="articles-grid"></div>
+      </div>
+
+      <!-- Videos -->
+      <div id="tab-videos" style="display:none">
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <span></span>
+          <button class="admin-add-btn" onclick="openAddModal('videos')">+ Add Video</button>
+        </div>
+        <div class="video-grid" id="videos-grid"></div>
+      </div>
+
+      <!-- Interviews -->
+      <div id="tab-interviews" style="display:none">
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <span></span>
+          <button class="admin-add-btn" onclick="openAddModal('interviews')">+ Add Interview</button>
+        </div>
+        <div class="interview-list" id="interviews-grid"></div>
+      </div>
+
+      <!-- Events -->
+      <div id="tab-events" style="display:none">
+        <div class="section-header" style="margin-bottom:1.5rem">
+          <span></span>
+          <button class="admin-add-btn" onclick="openAddModal('events')">+ Add Event</button>
+        </div>
+        <div class="events-grid" id="events-grid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal-overlay" id="video-modal-overlay" onclick="closeVideoModal(event)">
+    <div class="video-modal">
+      <button class="video-modal-close" onclick="closeVideoModal()">&#x2715;</button>
+      <iframe id="video-modal-iframe" src="" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- ADMIN MODAL -->
+  <div class="admin-modal-overlay" id="admin-modal-overlay">
+    <div class="admin-modal">
+      <h3 id="admin-modal-title">Add Item</h3>
+      <div id="admin-modal-fields"></div>
+      <div class="admin-btns">
+        <button class="admin-save-btn" onclick="saveAdminItem()">Save</button>
+        <button class="admin-cancel-btn" onclick="closeAdminModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN LOGIN MODAL -->
+  <div class="admin-modal-overlay" id="admin-login-overlay">
+    <div class="admin-modal" style="max-width:360px">
+      <h3>Admin Access</h3>
+      <div class="admin-field">
+        <label>Password</label>
+        <input type="password" id="admin-password-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')submitAdminLogin()" />
+      </div>
+      <div class="admin-btns">
+        <button class="admin-save-btn" onclick="submitAdminLogin()">Sign In</button>
+        <button class="admin-cancel-btn" onclick="closeAdminLogin()">Cancel</button>
+      </div>
+      <p class="admin-login-hint">Contact the site administrator for access.</p>
+    </div>
+  </div>
+
+  <!-- ADMIN FAB -->
+  <button class="admin-fab" id="admin-fab" title="Admin" onclick="handleAdminFab()">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+  </button>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -1129,5 +1603,231 @@
     </div>
   </footer>
 
+<script>
+  // ── ADMIN PASSWORD (change as needed) ──
+  const ADMIN_PASSWORD = 'arwa2026';
+  const STORAGE_KEY = 'arwaSiteData';
+
+  let siteData = { articles: [], videos: [], interviews: [], events: [] };
+  let currentModal = { type: null, editId: null };
+
+  // ── LOAD DATA: fetch seed JSON, then merge localStorage overrides ──
+  async function loadData() {
+    try {
+      const res = await fetch('data.json');
+      const seed = await res.json();
+      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      siteData = stored || seed;
+    } catch(e) {
+      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+      if (stored) siteData = stored;
+    }
+    renderAll();
+  }
+
+  function saveData() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(siteData));
+  }
+
+  function formatDate(d) {
+    if (!d) return '';
+    try { return new Date(d).toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' }); }
+    catch { return d; }
+  }
+
+  // ── RENDER ALL ──
+  function renderAll() {
+    renderArticles();
+    renderVideos();
+    renderInterviews();
+    renderEvents();
+  }
+
+  function renderArticles() {
+    const g = document.getElementById('articles-grid');
+    if (!g) return;
+    if (!siteData.articles.length) { g.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No articles yet.</p>'; return; }
+    g.innerHTML = siteData.articles.map(a => `
+      <a class="content-card" href="${a.url||'#'}" target="${a.url?'_blank':'_self'}" rel="noopener noreferrer">
+        <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'articles','${a.id}')">&#x2715;</button>
+        <span class="content-card-pub">${a.publication||''}</span>
+        <span class="content-card-title">${a.title}</span>
+        <span class="content-card-excerpt">${a.excerpt||''}</span>
+        <span class="content-card-date">${formatDate(a.date)}</span>
+        <span class="content-card-arrow">&#x2197;</span>
+      </a>`).join('');
+  }
+
+  function renderVideos() {
+    const g = document.getElementById('videos-grid');
+    if (!g) return;
+    if (!siteData.videos.length) { g.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No videos yet.</p>'; return; }
+    g.innerHTML = siteData.videos.map(v => `
+      <div class="video-card">
+        <div class="video-thumb" onclick="openVideoModal('${v.youtubeId}')">
+          <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" alt="${v.title}" loading="lazy" />
+          <div class="video-play">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="11" stroke="rgba(201,168,76,0.9)" stroke-width="1.5"/>
+              <polygon points="10,8 18,12 10,16" fill="rgba(201,168,76,0.95)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-info" style="position:relative">
+          <button class="admin-delete-btn" style="top:0.4rem;right:0.4rem" title="Delete" onclick="deleteItem(event,'videos','${v.id}')">&#x2715;</button>
+          <div class="video-date">${formatDate(v.date)}</div>
+          <div class="video-title">${v.title}</div>
+          <div class="video-desc">${v.description||''}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  function renderInterviews() {
+    const g = document.getElementById('interviews-grid');
+    if (!g) return;
+    if (!siteData.interviews.length) { g.innerHTML = '<p style="color:var(--text-muted)">No interviews yet.</p>'; return; }
+    g.innerHTML = siteData.interviews.map(i => `
+      <a class="interview-card" href="${i.url||'#'}" target="${i.url?'_blank':'_self'}" rel="noopener noreferrer" style="position:relative">
+        <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'interviews','${i.id}')">&#x2715;</button>
+        <div class="interview-meta">
+          <span class="interview-type">${i.type||'Interview'}</span>
+          <div class="interview-outlet">${i.outlet||''}</div>
+          <div class="content-card-date" style="margin-top:0.3rem">${formatDate(i.date)}</div>
+        </div>
+        <div>
+          <div class="interview-title">${i.title}</div>
+          <div class="interview-desc">${i.description||''}</div>
+        </div>
+        <span class="interview-arrow">&#x2192;</span>
+      </a>`).join('');
+  }
+
+  function renderEvents() {
+    const g = document.getElementById('events-grid');
+    if (!g) return;
+    if (!siteData.events.length) { g.innerHTML = '<p style="color:var(--text-muted);grid-column:1/-1">No events yet.</p>'; return; }
+    g.innerHTML = siteData.events.map(e => `
+      <div class="event-card">
+        <button class="admin-delete-btn" title="Delete" onclick="deleteItem(event,'events','${e.id}')">&#x2715;</button>
+        <div class="event-type-tag">${e.type||''}</div>
+        <div class="event-title">${e.title}</div>
+        <div class="event-location">&#x1F4CD; ${e.location||''}</div>
+        <div class="event-date">${formatDate(e.date)}</div>
+        <div class="event-desc">${e.description||''}</div>
+        ${e.url ? `<a class="event-link" href="${e.url}" target="_blank" rel="noopener noreferrer">Learn more &#x2197;</a>` : ''}
+      </div>`).join('');
+  }
+
+  // ── TABS ──
+  document.querySelectorAll('.dyn-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.dyn-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      ['articles','videos','interviews','events'].forEach(t => {
+        document.getElementById('tab-'+t).style.display = t === btn.dataset.tab ? '' : 'none';
+      });
+    });
+  });
+
+  // ── VIDEO MODAL ──
+  function openVideoModal(youtubeId) {
+    document.getElementById('video-modal-iframe').src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+    document.getElementById('video-modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideoModal(e) {
+    if (e && e.target !== document.getElementById('video-modal-overlay') && !e.target.closest('.video-modal-close')) return;
+    document.getElementById('video-modal-iframe').src = '';
+    document.getElementById('video-modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── ADMIN AUTH ──
+  function isAdmin() { return sessionStorage.getItem('arwaAdmin') === '1'; }
+
+  function handleAdminFab() {
+    if (isAdmin()) {
+      document.body.classList.toggle('admin-mode');
+    } else {
+      document.getElementById('admin-login-overlay').classList.add('open');
+      setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
+    }
+  }
+
+  function submitAdminLogin() {
+    const pw = document.getElementById('admin-password-input').value;
+    if (pw === ADMIN_PASSWORD) {
+      sessionStorage.setItem('arwaAdmin', '1');
+      document.getElementById('admin-login-overlay').classList.remove('open');
+      document.getElementById('admin-password-input').value = '';
+      document.body.classList.add('admin-mode');
+    } else {
+      document.getElementById('admin-password-input').style.borderColor = '#b5452a';
+      setTimeout(() => document.getElementById('admin-password-input').style.borderColor = '', 1200);
+    }
+  }
+
+  function closeAdminLogin() {
+    document.getElementById('admin-login-overlay').classList.remove('open');
+    document.getElementById('admin-password-input').value = '';
+  }
+
+  // ── ADMIN ADD/EDIT MODAL ──
+  const FIELDS = {
+    articles:   [{k:'title',l:'Title',type:'text'},{k:'publication',l:'Publication',type:'text'},{k:'date',l:'Date',type:'date'},{k:'url',l:'URL',type:'url'},{k:'excerpt',l:'Excerpt',type:'textarea'}],
+    videos:     [{k:'title',l:'Title',type:'text'},{k:'youtubeId',l:'YouTube Video ID',type:'text'},{k:'date',l:'Date',type:'date'},{k:'description',l:'Description',type:'textarea'}],
+    interviews: [{k:'title',l:'Title',type:'text'},{k:'outlet',l:'Outlet',type:'text'},{k:'type',l:'Type',type:'select',opts:['Magazine','Profile','Podcast','Video','Print','Online']},{k:'date',l:'Date',type:'date'},{k:'url',l:'URL',type:'url'},{k:'description',l:'Description',type:'textarea'}],
+    events:     [{k:'title',l:'Title',type:'text'},{k:'type',l:'Type',type:'select',opts:['Conference','Keynote','Panel','Fundraiser','Award Ceremony','Workshop','Other']},{k:'date',l:'Date',type:'date'},{k:'location',l:'Location',type:'text'},{k:'url',l:'URL (optional)',type:'url'},{k:'description',l:'Description',type:'textarea'}]
+  };
+
+  function openAddModal(type) {
+    if (!isAdmin()) return;
+    currentModal = { type, editId: null };
+    document.getElementById('admin-modal-title').textContent = 'Add ' + type.slice(0,-1).replace(/^./, c => c.toUpperCase());
+    buildFields(type, {});
+    document.getElementById('admin-modal-overlay').classList.add('open');
+  }
+
+  function buildFields(type, data) {
+    const c = document.getElementById('admin-modal-fields');
+    c.innerHTML = FIELDS[type].map(f => {
+      if (f.type === 'textarea') return `<div class="admin-field"><label>${f.l}</label><textarea id="af-${f.k}">${data[f.k]||''}</textarea></div>`;
+      if (f.type === 'select') return `<div class="admin-field"><label>${f.l}</label><select id="af-${f.k}">${f.opts.map(o=>`<option ${data[f.k]===o?'selected':''}>${o}</option>`).join('')}</select></div>`;
+      return `<div class="admin-field"><label>${f.l}</label><input type="${f.type}" id="af-${f.k}" value="${data[f.k]||''}" /></div>`;
+    }).join('');
+  }
+
+  function closeAdminModal() {
+    document.getElementById('admin-modal-overlay').classList.remove('open');
+    currentModal = { type: null, editId: null };
+  }
+
+  function saveAdminItem() {
+    const { type } = currentModal;
+    if (!type) return;
+    const item = { id: 'id_' + Date.now() };
+    FIELDS[type].forEach(f => {
+      const el = document.getElementById('af-'+f.k);
+      if (el) item[f.k] = el.value.trim();
+    });
+    siteData[type] = [item, ...siteData[type]];
+    saveData();
+    renderAll();
+    closeAdminModal();
+  }
+
+  function deleteItem(e, type, id) {
+    e.preventDefault(); e.stopPropagation();
+    if (!isAdmin()) return;
+    if (!confirm('Delete this item?')) return;
+    siteData[type] = siteData[type].filter(x => x.id !== id);
+    saveData();
+    renderAll();
+  }
+
+  // ── INIT ──
+  loadData();
+  if (isAdmin()) document.body.classList.add('admin-mode');
+</script>
 </body>
 </html>
