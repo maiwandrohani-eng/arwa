@@ -955,8 +955,28 @@
     .event-location { font-size: 0.82rem; color: var(--text-muted); }
     .event-date { font-size: 0.75rem; color: rgba(158,152,144,0.6); }
     .event-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-top: 0.3rem; }
-    .event-link { display: inline-block; margin-top: 0.6rem; font-size: 0.75rem; color: var(--gold); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; }
-    .event-link:hover { text-decoration: underline; }
+    .event-link {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--dark);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 0.7rem 1.4rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      box-shadow: 0 2px 8px rgba(201,168,76,0.08);
+    }
+    .event-link:hover {
+      background: var(--gold-light);
+      color: var(--dark);
+      border-color: var(--gold-light);
+      text-decoration: none;
+    }
 
     /* Add button */
     .section-header {
