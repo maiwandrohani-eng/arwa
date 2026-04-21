@@ -1123,7 +1123,7 @@
       <li><a href="#awards">Awards</a></li>
       <li><a href="#inara">INARA</a></li>
       <li><a href="#content">Articles</a></li>
-      <li><a href="#content">Videos</a></li>
+      <li><a href="#content">Interviews</a></li>
       <li><a href="#content">Events</a></li>
     </ul>
   </nav>
@@ -1482,14 +1482,13 @@
       <div class="section-header">
         <div>
           <p class="section-label">Explore her work</p>
-          <h2>Articles, Videos &amp; Events</h2>
+          <h2>Articles, Interviews &amp; Events</h2>
           <div class="divider"></div>
         </div>
       </div>
 
       <div class="dyn-tabs">
         <button class="dyn-tab active" data-tab="articles">Articles</button>
-        <button class="dyn-tab" data-tab="videos">Videos</button>
         <button class="dyn-tab" data-tab="interviews">Interviews</button>
         <button class="dyn-tab" data-tab="events">Events</button>
       </div>
@@ -1501,15 +1500,6 @@
           <button class="admin-add-btn" onclick="openAddModal('articles')">+ Add Article</button>
         </div>
         <div class="content-grid" id="articles-grid"></div>
-      </div>
-
-      <!-- Videos -->
-      <div id="tab-videos" style="display:none">
-        <div class="section-header" style="margin-bottom:1.5rem">
-          <span></span>
-          <button class="admin-add-btn" onclick="openAddModal('videos')">+ Add Video</button>
-        </div>
-        <div class="video-grid" id="videos-grid"></div>
       </div>
 
       <!-- Interviews -->
@@ -1723,7 +1713,7 @@
     btn.addEventListener('click', () => {
       document.querySelectorAll('.dyn-tab').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      ['articles','videos','interviews','events'].forEach(t => {
+      ['articles','interviews','events'].forEach(t => {
         document.getElementById('tab-'+t).style.display = t === btn.dataset.tab ? '' : 'none';
       });
     });
