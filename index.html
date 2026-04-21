@@ -18,6 +18,7 @@
       --text: #e8e4dc;
       --text-muted: #9e9890;
       --accent: #b5452a;
+      --alert-h: 42px;
     }
 
     html { scroll-behavior: smooth; }
@@ -43,6 +44,89 @@
       background: rgba(13,13,13,0.85);
       border-bottom: 1px solid rgba(201,168,76,0.15);
     }
+    body.has-top-alert nav { top: var(--alert-h); }
+
+    /* ─── TOP ALERT / WHAT'S NEW ─── */
+    .top-alert {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 160;
+      height: var(--alert-h);
+      display: none;
+      align-items: center;
+      background: rgba(20,20,20,0.92);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      backdrop-filter: blur(14px);
+    }
+    .top-alert.show { display: flex; }
+    .top-alert-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+      padding: 0 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .top-alert-left {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      min-width: 0;
+    }
+    .top-alert-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--gold);
+      padding: 0.25rem 0.55rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .top-alert-items {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      min-width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .top-alert-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(201,168,76,0.22);
+      color: rgba(232,228,220,0.9);
+      text-decoration: none;
+      font-size: 0.74rem;
+      letter-spacing: 0.03em;
+      background: rgba(201,168,76,0.06);
+      max-width: 44vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .top-alert-item:hover { border-color: rgba(201,168,76,0.42); color: var(--gold-light); }
+    .top-alert-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .top-alert-close {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      border: 1px solid rgba(201,168,76,0.18);
+      background: transparent;
+      color: rgba(232,228,220,0.72);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .top-alert-close:hover { border-color: rgba(201,168,76,0.42); color: var(--gold); }
     .nav-logo {
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
@@ -776,6 +860,7 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
+      :root { --alert-h: 50px; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-toggle { display: inline-flex; }
@@ -799,6 +884,7 @@
       .content-grid { grid-template-columns: 1fr; }
       .video-grid { grid-template-columns: 1fr; }
       .events-grid { grid-template-columns: 1fr; }
+      .top-alert-item { max-width: 56vw; }
     }
 
     /* ─── DYNAMIC SECTIONS ─── */
@@ -1193,6 +1279,17 @@
   </style>
 </head>
 <body>
+
+  <!-- TOP ALERT -->
+  <div class="top-alert" id="top-alert" role="region" aria-label="What's new">
+    <div class="top-alert-inner">
+      <div class="top-alert-left">
+        <span class="top-alert-badge">New</span>
+        <div class="top-alert-items" id="top-alert-items"></div>
+      </div>
+      <button class="top-alert-close" id="top-alert-close" aria-label="Dismiss">✕</button>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav>
@@ -1730,6 +1827,7 @@
       if (stored) siteData = stored;
     }
     renderAll();
+    setupTopAlert();
   }
 
   function saveData() {
@@ -1740,6 +1838,84 @@
     if (!d) return '';
     try { return new Date(d).toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' }); }
     catch { return d; }
+  }
+
+  function parseDateSafe(d) {
+    if (!d) return null;
+    const dt = new Date(d);
+    return Number.isFinite(dt.getTime()) ? dt : null;
+  }
+
+  function pickLatestByDate(items) {
+    let best = null;
+    for (const it of (items || [])) {
+      const dt = parseDateSafe(it?.date);
+      if (!dt) continue;
+      if (!best || dt > best._dt) best = { ...it, _dt: dt };
+    }
+    return best;
+  }
+
+  function pickNextUpcomingEvent(items) {
+    const today = new Date();
+    const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    let best = null;
+    for (const it of (items || [])) {
+      const dt = parseDateSafe(it?.date);
+      if (!dt) continue;
+      if (dt < startOfToday) continue;
+      if (!best || dt < best._dt) best = { ...it, _dt: dt };
+    }
+    return best;
+  }
+
+  function selectTab(tab) {
+    const btn = document.querySelector(`.dyn-tab[data-tab="${tab}"]`);
+    if (btn) btn.click();
+  }
+
+  function setupTopAlert() {
+    const bar = document.getElementById('top-alert');
+    const itemsEl = document.getElementById('top-alert-items');
+    const closeBtn = document.getElementById('top-alert-close');
+    if (!bar || !itemsEl || !closeBtn) return;
+
+    const dismissedUntil = Number(localStorage.getItem('arwaTopAlertDismissedUntil') || '0');
+    if (Date.now() < dismissedUntil) return;
+
+    const latestArticle = pickLatestByDate(siteData.articles);
+    const latestInterview = pickLatestByDate(siteData.interviews);
+    const nextEvent = pickNextUpcomingEvent(siteData.events);
+
+    const pills = [];
+    if (nextEvent) pills.push({ label: `Upcoming: ${nextEvent.title}`, tab: 'events' });
+    if (latestArticle) pills.push({ label: `Article: ${latestArticle.title}`, tab: 'articles' });
+    if (latestInterview) pills.push({ label: `Interview: ${latestInterview.title}`, tab: 'interviews' });
+
+    if (!pills.length) return;
+
+    itemsEl.innerHTML = pills.map(p => `
+      <a class="top-alert-item" href="#content" data-tab="${p.tab}">
+        <span class="top-alert-dot" aria-hidden="true"></span>
+        <span>${p.label}</span>
+      </a>
+    `).join('');
+
+    bar.classList.add('show');
+    document.body.classList.add('has-top-alert');
+
+    itemsEl.querySelectorAll('a[data-tab]').forEach(a => {
+      a.addEventListener('click', () => {
+        const tab = a.getAttribute('data-tab');
+        if (tab) selectTab(tab);
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      bar.classList.remove('show');
+      document.body.classList.remove('has-top-alert');
+      localStorage.setItem('arwaTopAlertDismissedUntil', String(Date.now() + 24*60*60*1000));
+    });
   }
 
   // ── RENDER ALL ──
