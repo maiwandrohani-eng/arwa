@@ -183,63 +183,41 @@
       "date": "2025-07-11",
       "url": "https://inara.org/food-parcels-for-displaced-gaza-families-in-egypt/",
       "excerpt": "INARA distributes food parcels to Gazan families displaced to Egypt, addressing food insecurity and financial hardship."
+    },
+    {
+      "id": "a24",
+      "title": "As Gaza Braces for a Ground Invasion",
+      "publication": "New Lines Magazine",
+      "date": "2023-10-09",
+      "url": "https://newlinesmag.com/writers/arwa-damon/",
+      "excerpt": "Written just after Oct. 7 on the cycle of violence and emotional trajectories of both populations."
+    },
+    {
+      "id": "a25",
+      "title": "One Year After Oct. 7",
+      "publication": "Atlantic Council",
+      "date": "2024-10-07",
+      "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
+      "excerpt": "Co-authored piece examining how the region changed politically, socially, and militarily."
+    },
+    {
+      "id": "a26",
+      "title": "Inside the Israeli Government's Starvation of Gaza",
+      "publication": "Atlantic Council",
+      "date": "2025-01-30",
+      "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
+      "excerpt": "On INARA's attempts to deliver food amid the blockade."
+    },
+    {
+      "id": "a27",
+      "title": "Syria + Trump Oval Office Meeting",
+      "publication": "Atlantic Council",
+      "date": "2025-11-11",
+      "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
+      "excerpt": "Co-authored analysis on Trump hosting Syrian President Ahmed al-Sharaa."
     }
-      ,
-      {
-        "id": "a24",
-        "title": "As Gaza Braces for a Ground Invasion",
-        "publication": "New Lines Magazine",
-        "date": "2023-10-09",
-        "url": "https://newlinesmag.com/writers/arwa-damon/",
-        "excerpt": "Written just after Oct. 7 on the cycle of violence and emotional trajectories of both populations."
-      },
-      {
-        "id": "a25",
-        "title": "One Year After Oct. 7",
-        "publication": "Atlantic Council",
-        "date": "2024-10-07",
-        "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
-        "excerpt": "Co-authored piece examining how the region changed politically, socially, and militarily."
-      },
-      {
-        "id": "a26",
-        "title": "Inside the Israeli Government's Starvation of Gaza",
-        "publication": "Atlantic Council",
-        "date": "2025-01-30",
-        "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
-        "excerpt": "On INARA's attempts to deliver food amid the blockade."
-      },
-      {
-        "id": "a27",
-        "title": "Syria + Trump Oval Office Meeting",
-        "publication": "Atlantic Council",
-        "date": "2025-11-11",
-        "url": "https://www.atlanticcouncil.org/expert/arwa-damon/",
-        "excerpt": "Co-authored analysis on Trump hosting Syrian President Ahmed al-Sharaa."
-      }
   ],
   "videos": [
-    {
-      "id": "v1",
-      "title": "Arwa Damon on Her Motivation to Cover the Syrian Conflict",
-      "description": "Damon speaks candidly about what draws her to Syria, the human stories behind the statistics, and what motivates a journalist to keep returning to a warzone.",
-      "youtubeId": "5GNRYhlXiLE",
-      "date": "2016-09-01"
-    },
-    {
-      "id": "v2",
-      "title": "Arwa Damon Investigates: Ivory War",
-      "description": "Embedded with anti-poaching rangers in the Republic of Congo's Odzala National Park, Damon investigates the illegal ivory trade decimating elephant populations.",
-      "youtubeId": "XqV87omfT2M",
-      "date": "2014-01-01"
-    },
-    {
-      "id": "v3",
-      "title": "Children Are Crying Out in Agony for Food — Gaza Crisis",
-      "description": "Arwa Damon joins CNN's Wolf Blitzer to describe the catastrophic food shortage inside Gaza and INARA's efforts to deliver emergency nutrition.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "date": "2025-06-02"
-    },
     {
       "id": "v1",
       "title": "Arwa Damon on Her Motivation to Cover the Syrian Conflict",
@@ -263,33 +241,33 @@
     }
   ],
   "interviews": [
-        {
-          "id": "i21",
-          "title": "She saw the death of the human soul",
-          "outlet": "Haaretz",
-          "date": "2024-06-21",
-          "url": "https://www.haaretz.com/israel-news/2024-06-21/ty-article-magazine/.highlight/as-a-cnn-war-reporter-arwa-damon-thought-she-had-seen-everything-then-she-went-to-gaza/00000190-3bdd-d768-adf8-3fff8a400000",
-          "description": "Long profile — on career from CNN to Gaza aid work.",
-          "type": "Feature Interview"
-        },
-        {
-          "id": "i22",
-          "title": "Gaza's wounds and the humanitarian situation",
-          "outlet": "CSIS Babel Podcast",
-          "date": "2024-11-26",
-          "url": "https://www.csis.org/podcasts/babel-translating-middle-east/arwa-damon-gazas-wounds",
-          "description": "Spoke with Jon Alterman about Gaza's wounds and the humanitarian situation.",
-          "type": "Podcast"
-        },
-        {
-          "id": "i23",
-          "title": "Seizing the Summit with Journalist and Filmmaker Arwa Damon",
-          "outlet": "Alyssa Milano: Sorry Not Sorry",
-          "date": "2025-04-15",
-          "url": "https://creators.spotify.com/pod/profile/alyssa-milano-sorry-not-sorry/episodes/Seizing-the-Summit-with-Journalist-and-Filmmaker-Arwa-Damon-e2r4hao",
-          "description": "Interview on Seizing the Summit documentary and INARA's work.",
-          "type": "Podcast"
-        }
+    {
+      "id": "i21",
+      "title": "She saw the death of the human soul",
+      "outlet": "Haaretz",
+      "date": "2024-06-21",
+      "url": "https://www.haaretz.com/israel-news/2024-06-21/ty-article-magazine/.highlight/as-a-cnn-war-reporter-arwa-damon-thought-she-had-seen-everything-then-she-went-to-gaza/00000190-3bdd-d768-adf8-3fff8a400000",
+      "description": "Long profile — on career from CNN to Gaza aid work.",
+      "type": "Feature Interview"
+    },
+    {
+      "id": "i22",
+      "title": "Gaza's wounds and the humanitarian situation",
+      "outlet": "CSIS Babel Podcast",
+      "date": "2024-11-26",
+      "url": "https://www.csis.org/podcasts/babel-translating-middle-east/arwa-damon-gazas-wounds",
+      "description": "Spoke with Jon Alterman about Gaza's wounds and the humanitarian situation.",
+      "type": "Podcast"
+    },
+    {
+      "id": "i23",
+      "title": "Seizing the Summit with Journalist and Filmmaker Arwa Damon",
+      "outlet": "Alyssa Milano: Sorry Not Sorry",
+      "date": "2025-04-15",
+      "url": "https://creators.spotify.com/pod/profile/alyssa-milano-sorry-not-sorry/episodes/Seizing-the-Summit-with-Journalist-and-Filmmaker-Arwa-Damon-e2r4hao",
+      "description": "Interview on Seizing the Summit documentary and INARA's work.",
+      "type": "Podcast"
+    },
     {
       "id": "i10",
       "title": "“The War Hasn’t Ended”: Palestinians in Gaza Still Face Israeli Attacks, Disease, Medical Neglect",
@@ -570,33 +548,33 @@
       "location": "Egypt (for Gazan families)",
       "description": "INARA distributes food parcels to Gazan families displaced to Egypt.",
       "url": "https://inara.org/food-parcels-for-displaced-gaza-families-in-egypt/"
+    },
+    {
+      "id": "e20",
+      "title": "AAIE Global Leadership Conversation — Washington, D.C.",
+      "type": "Keynote Speaker",
+      "date": "2023-02-06",
+      "location": "Grand Hyatt, Washington, D.C., USA",
+      "description": "Keynote speaker at the Association for the Advancement of International Education annual conference.",
+      "url": "https://www.facebook.com/AAIEGlobal/videos/533913431405030/"
+    },
+    {
+      "id": "e21",
+      "title": "Munk Debates — Toronto",
+      "type": "Debate",
+      "date": "2023-11-28",
+      "location": "Toronto, Canada",
+      "description": "Live public debate on 'Western media has an anti-Israel bias'; she argued against the resolution.",
+      "url": "https://munkdebates.com/podcasts/media-coverage-of-israel-debate/"
+    },
+    {
+      "id": "e22",
+      "title": "Impact DOCS Awards",
+      "type": "Film Award",
+      "date": "2024-12-10",
+      "location": "Online / International",
+      "description": "Seize the Summit won; ÉCU European Independent Film Festival official selection.",
+      "url": "https://www.journeyman.tv/film/8646/seize-the-summit"
     }
-      {
-        "id": "e20",
-        "title": "AAIE Global Leadership Conversation — Washington, D.C.",
-        "type": "Keynote Speaker",
-        "date": "2023-02-06",
-        "location": "Grand Hyatt, Washington, D.C., USA",
-        "description": "Keynote speaker at the Association for the Advancement of International Education annual conference.",
-        "url": "https://www.facebook.com/AAIEGlobal/videos/533913431405030/"
-      },
-      {
-        "id": "e21",
-        "title": "Munk Debates — Toronto",
-        "type": "Debate",
-        "date": "2023-11-28",
-        "location": "Toronto, Canada",
-        "description": "Live public debate on 'Western media has an anti-Israel bias'; she argued against the resolution.",
-        "url": "https://munkdebates.com/podcasts/media-coverage-of-israel-debate/"
-      },
-      {
-        "id": "e22",
-        "title": "Impact DOCS Awards",
-        "type": "Film Award",
-        "date": "2024-12-10",
-        "location": "Online / International",
-        "description": "Seize the Summit won; ÉCU European Independent Film Festival official selection.",
-        "url": "https://www.journeyman.tv/film/8646/seize-the-summit"
-      }
   ]
 }

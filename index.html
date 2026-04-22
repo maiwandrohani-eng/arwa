@@ -1935,6 +1935,8 @@
   </footer>
 
 <script>
+    // Ensure data loads and content renders on page load
+    document.addEventListener('DOMContentLoaded', loadData);
   // ── ADMIN PASSWORD (change as needed) ──
   const ADMIN_PASSWORD = 'arwa2026';
   const STORAGE_KEY = 'arwaSiteData';
@@ -1946,12 +1948,9 @@
   async function loadData() {
     try {
       const res = await fetch('data.json');
-      const seed = await res.json();
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-      siteData = stored || seed;
+      siteData = await res.json();
     } catch(e) {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
-      if (stored) siteData = stored;
+      siteData = { articles: [], videos: [], interviews: [], events: [] };
     }
     renderAll();
     setupTopAlert();
